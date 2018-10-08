@@ -11,8 +11,8 @@ public class PlayerSkills : MonoBehaviour
 
     public void Start()
     {
-        speed = PlayerStats.atkspeed;
-        damage = PlayerStats.damage;
+        speed = 750f;// PlayerStats.atkspeed;
+        damage = 9001; //PlayerStats.damage;
     }
 
     private void FixedUpdate()

@@ -9,6 +9,7 @@ TagManager:
   - Attack
   - EnemyAttack
   - Enemy
+  - Invincible
   layers:
   - Default
   - TransparentFX

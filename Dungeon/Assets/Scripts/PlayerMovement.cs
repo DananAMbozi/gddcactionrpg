@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         LoadNewPlayer();
-        speed = PlayerStats.movespeed;
+        speed = 1f;//PlayerStats.movespeed;
     }
 
     void FixedUpdate()
@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     void movePlayer(float x, float y)
     {
         rb.position += new Vector2(x, y);
+        transform.position = rb.position;
     }
 
     void calcAngle()
