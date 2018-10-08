@@ -9,7 +9,14 @@ TagManager:
   - Attack
   - EnemyAttack
   - Enemy
+<<<<<<< HEAD
   - Invincible
+=======
+  - Top
+  - Right
+  - Bot
+  - Left
+>>>>>>> 180e780161604394bd7ccf909527b0f0b5286425
   layers:
   - Default
   - TransparentFX
