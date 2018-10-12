@@ -9,11 +9,11 @@ public class PlayerAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         if (!other.CompareTag("collisiondetector") && !other.CompareTag("Player") && !other.CompareTag("Attack") && !other.CompareTag("low") && !other.CompareTag("collisiondetector"))
-=======
-        if (!other.CompareTag("Player") && !other.CompareTag("Level") && !other.CompareTag("Invincible"))
->>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
+//=======
+        if (!other.CompareTag("Player") && !other.CompareTag("Invincible"))
+//>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
         {
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);

@@ -19,7 +19,7 @@ public class PlayerSkills : MonoBehaviour
 
     public void Start()
     {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         ms = PlayerStats.atkMS;
         damage = PlayerStats.damage;
         atkcd = PlayerStats.atkCD;
@@ -34,15 +34,15 @@ public class PlayerSkills : MonoBehaviour
             Mdamage = 20;
             Matkcd = 0.5f;
         }
-=======
-        speed = 750f;// PlayerStats.atkspeed;
-        damage = 9001; //PlayerStats.damage;
->>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
+//=======
+//        speed = 750f;// PlayerStats.atkspeed;
+//        damage = 9001; //PlayerStats.damage;
+//>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && cd <= 0) //tempChanging to key down Input.GetAxis("Space") > 0
+        if (Input.GetAxis("Space") > 0 && cd <= 0) //tempChanging to key down Input.GetKeyDown(KeyCode.Space)
         {
             Attack(ms);
             cd = atkcd;
@@ -75,7 +75,7 @@ public class PlayerSkills : MonoBehaviour
     void MAttack()
     {
         Quaternion right = Quaternion.FromToRotation(Vector3.up, Vector3.right);
-        GameObject newSword = Instantiate(Sword, transform.position + Vector3.right, right); //use transform.rotation later
-                                                                                             //        newSword.GetComponent<SwordAttack>().Mdamage = Mdamage;
+        GameObject newSword = Instantiate(Sword, transform.position, right);                 //use transform.rotation later
+                                                                                             //newSword.GetComponent<SwordAttack>().Mdamage = Mdamage;
     }
 }

@@ -4,25 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Breakable
-  - Level
-  - Attack
-  - EnemyAttack
-  - Enemy
-<<<<<<< HEAD
-  - Invincible
-=======
-  - Top
-  - Right
-  - Bot
-  - Left
-<<<<<<< HEAD
-  - GunEnemy
   - low
+  - Attack
   - collisiondetector
-=======
->>>>>>> 180e780161604394bd7ccf909527b0f0b5286425
->>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
+  - GunEnemy
+  - EnemyAttack
+  - Invincible
   layers:
   - Default
   - TransparentFX
@@ -32,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Box
-  - AboveBox
+  - 
+  - 
+  - 
   - 
   - 
   - 

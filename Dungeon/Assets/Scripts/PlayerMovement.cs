@@ -17,15 +17,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         LoadNewPlayer();
-<<<<<<< HEAD
+//<<<<<<< HEAD
         speed = PlayerStats.movespeed;
         if (speed == 0)
         {
-            speed = 2;
+            speed = 1;
         }
-=======
-        speed = 1f;//PlayerStats.movespeed;
->>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
+//=======
+        //speed = 1f;//PlayerStats.movespeed;
+//>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
     }
 
     void FixedUpdate()
@@ -64,12 +64,12 @@ public class PlayerMovement : MonoBehaviour
 
     void movePlayer(Vector2 moveV)
     {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         rb.position += moveV;
-=======
-        rb.position += new Vector2(x, y);
+//=======
+        rb.position += new Vector2(moveV.x,moveV.y);
         transform.position = rb.position;
->>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
+//>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
     }
 
     void calcAngle()

@@ -36,6 +36,7 @@ public class EnemySword : MonoBehaviour
         {
             Destroy(gameObject);
             directionAngle = 0;
+            swingDeg = 0;
         }
 
         if (unitDirection.y == 0)

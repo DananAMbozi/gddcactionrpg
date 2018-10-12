@@ -326,8 +326,15 @@
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSkills.cs" />
+    <Compile Include="Assets\Scripts\PlayerSkillSet.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\SceneMaker.cs" />
+    <Compile Include="Assets\Scripts\SkillAssigner.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffInvincible.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\StatusEffect.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\SkillMist.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\Skills.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\TestFireball.cs" />
     <Compile Include="Assets\Scripts\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\SwordAttack.cs" />
     <Compile Include="Assets\Scripts\WaterballScript.cs" />
