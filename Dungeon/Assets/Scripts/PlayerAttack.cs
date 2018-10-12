@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
 //<<<<<<< HEAD
         if (!other.CompareTag("collisiondetector") && !other.CompareTag("Player") && !other.CompareTag("Attack") && !other.CompareTag("low") && !other.CompareTag("collisiondetector"))
 //=======
-        if (!other.CompareTag("Player") && !other.CompareTag("Invincible"))
+        if (!other.CompareTag("Player") && !other.CompareTag("Invincible") && !other.CompareTag("Attack"))
 //>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
         {
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);

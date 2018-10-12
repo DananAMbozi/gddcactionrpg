@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkillMist : Skills {
     /*
      * Active skill that turns the player invincible (mist) for a set amount of time.
+     * Also makes them slightly transparent.
      */
 
     private float maxBuffTimer = 3f;    //Temporary, may move to buff instead of skill

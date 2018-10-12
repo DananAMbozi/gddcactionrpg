@@ -14,7 +14,7 @@ public class TestFireball : Skills {
         activeSkill = true; //This is an active skill
         maxSkillCooldown = 0.5f;
         fireball = (GameObject)Resources.Load("Fireball");
-        power = 90.01f; //9001% dmg
+        power = 10f;
 	}
 	
 	// Update is called once per frame

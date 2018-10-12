@@ -11,7 +11,7 @@ public static class SkillAssigner{
      * is designed
      * */
 
-    public enum skillNames{TESTFIREBALL, SKILLMIST};
+    public enum skillNames{TESTFIREBALL, SKILLMIST, SKILLHASTE, SKILLMINE};
 
     public static Skills AssignSkill(GameObject character, int skillID)
     {
@@ -30,6 +30,10 @@ public static class SkillAssigner{
                 return character.AddComponent<TestFireball>();
             case (int)skillNames.SKILLMIST:
                 return character.AddComponent<SkillMist>();
+            case (int)skillNames.SKILLHASTE:
+                return character.AddComponent<SkillHaste>();
+            case (int)skillNames.SKILLMINE:
+                return character.AddComponent<SkillMine>();
             default:
                 return null;
         }

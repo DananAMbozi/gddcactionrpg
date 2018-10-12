@@ -331,7 +331,10 @@
     <Compile Include="Assets\Scripts\SceneMaker.cs" />
     <Compile Include="Assets\Scripts\SkillAssigner.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffInvincible.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffSpeedUp.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\StatusEffect.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\SkillHaste.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\SkillMine.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\SkillMist.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Skills.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\TestFireball.cs" />

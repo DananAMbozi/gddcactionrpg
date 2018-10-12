@@ -11,11 +11,12 @@ public class PlayerSkillSet : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        skillSlot = new Skills[2];  //2 skill slots for now, may add more later
+        skillSlot = new Skills[3];  //2 skill slots for now, may add more later
         //Attach fireball script (temporary)
-        skillSlot[0] = SkillAssigner.AssignSkill(gameObject, (int)SkillAssigner.skillNames.TESTFIREBALL);
+        skillSlot[0] = SkillAssigner.AssignSkill(gameObject, (int)SkillAssigner.skillNames.SKILLMINE);
         //Attach mist script (temporary)
-        skillSlot[1] = SkillAssigner.AssignSkill(gameObject, (int)SkillAssigner.skillNames.SKILLMIST);
+        skillSlot[1] = SkillAssigner.AssignSkill(gameObject, (int)SkillAssigner.skillNames.SKILLHASTE);
+        skillSlot[2] = SkillAssigner.AssignSkill(gameObject, (int)SkillAssigner.skillNames.SKILLMIST);
     }
 	
 	// Update is called once per frame
@@ -26,6 +27,8 @@ public class PlayerSkillSet : MonoBehaviour {
             skillKey = 0;
         else if (Input.GetKeyDown(KeyCode.LeftShift))
             skillKey = 1;
+        else if (Input.GetKeyDown(KeyCode.E))
+            skillKey = 2;
 
         //Check to see if any buttons have been pressed
         if (skillKey != -1)
