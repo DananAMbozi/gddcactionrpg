@@ -19,6 +19,7 @@ public class PlayerSkills : MonoBehaviour
 
     public void Start()
     {
+<<<<<<< HEAD
         ms = PlayerStats.atkMS;
         damage = PlayerStats.damage;
         atkcd = PlayerStats.atkCD;
@@ -33,6 +34,10 @@ public class PlayerSkills : MonoBehaviour
             Mdamage = 20;
             Matkcd = 0.5f;
         }
+=======
+        speed = 750f;// PlayerStats.atkspeed;
+        damage = 9001; //PlayerStats.damage;
+>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
     }
 
     private void FixedUpdate()

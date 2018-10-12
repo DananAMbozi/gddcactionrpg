@@ -16,7 +16,7 @@ public class BoxmenuScript : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Attack"))
+        if (other.CompareTag("Player") || other.CompareTag("Attack") || (other.CompareTag("Invincible")))
         {
             SceneManager.LoadScene("CharacterSelect");
         }

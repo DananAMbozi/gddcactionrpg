@@ -9,13 +9,20 @@ TagManager:
   - Attack
   - EnemyAttack
   - Enemy
+<<<<<<< HEAD
+  - Invincible
+=======
   - Top
   - Right
   - Bot
   - Left
+<<<<<<< HEAD
   - GunEnemy
   - low
   - collisiondetector
+=======
+>>>>>>> 180e780161604394bd7ccf909527b0f0b5286425
+>>>>>>> e406dd28007d45dd390ba28e892c8eed66e76a7a
   layers:
   - Default
   - TransparentFX
