@@ -13,6 +13,9 @@ TagManager:
   - Right
   - Bot
   - Left
+  - GunEnemy
+  - low
+  - collisiondetector
   layers:
   - Default
   - TransparentFX
@@ -23,8 +26,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Box
+  - AboveBox
   - 
   - 
   - 

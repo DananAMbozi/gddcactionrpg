@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 95289598256163106}
   - component: {fileID: 114327430579633552}
   - component: {fileID: 114933968163828832}
+  - component: {fileID: 114467538994350946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fireball: {fileID: 1638080030673180, guid: 6119f1644ad26d94a9f855b3dab7e915, type: 2}
+  Sword: {fileID: 1216973503317040, guid: 491f83ce9d0e25d4481d364d979ac2f9, type: 2}
+--- !u!114 &114467538994350946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934054388923302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5962d45f021ae4646ab6a42de7d1ac14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114627661631267836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c027acb19bacce4da6c563cd3323fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 0
 --- !u!114 &114933968163828832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 50
+  immunityLength: 1
 --- !u!212 &212787248942148242
 SpriteRenderer:
   m_ObjectHideFlags: 1

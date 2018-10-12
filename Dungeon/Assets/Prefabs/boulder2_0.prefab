@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61246296984316514}
   m_Layer: 0
   m_Name: boulder2_0
-  m_TagString: Breakable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   reward: 5
+  isEnemy: 0
 --- !u!212 &212141560003422614
 SpriteRenderer:
   m_ObjectHideFlags: 1

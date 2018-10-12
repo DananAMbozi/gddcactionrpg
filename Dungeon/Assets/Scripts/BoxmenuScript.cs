@@ -18,7 +18,7 @@ public class BoxmenuScript : MonoBehaviour {
     {
         if (other.CompareTag("Player") || other.CompareTag("Attack"))
         {
-            SceneManager.LoadScene("1");
+            SceneManager.LoadScene("CharacterSelect");
         }
     }
 

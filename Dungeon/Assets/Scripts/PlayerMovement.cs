@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private float speed;
-    float direction;
-    Vector2 movement;
+    public float direction;
+    public Vector2 movement;
     private Animator anim;
     private static bool PlayerExists;
 
@@ -18,13 +18,17 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         LoadNewPlayer();
         speed = PlayerStats.movespeed;
+        if (speed == 0)
+        {
+            speed = 2;
+        }
     }
 
     void FixedUpdate()
     {
         getInput();
 
-        movePlayer(movement[0] * speed / 10, movement[1] * speed / 10);
+        movePlayer(movement);
 
         calcAngle();
 
@@ -46,16 +50,17 @@ public class PlayerMovement : MonoBehaviour
 
     void getInput()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        Vector2 moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveDir = moveDir.normalized;
+        movement = (speed / 10) * moveDir;
 
-        if (Mathf.Abs(movement.x) < 1 && Mathf.Abs(movement.y) < 1) anim.SetBool("Moving", false);
+        if (movement.magnitude < (speed / 20)) anim.SetBool("Moving", false);
         else anim.SetBool("Moving", true);
     }
 
-    void movePlayer(float x, float y)
+    void movePlayer(Vector2 moveV)
     {
-        rb.position += new Vector2(x, y);
+        rb.position += moveV;
     }
 
     void calcAngle()
@@ -66,8 +71,9 @@ public class PlayerMovement : MonoBehaviour
 
     void rotatePlayer()
     {
-        if (Mathf.Abs(movement.x) < 1 && Mathf.Abs(movement.y) < 1) return;
-        transform.eulerAngles = new Vector3(0, 0, -direction);
+        if (movement.magnitude < (speed / 50)) return;
+        transform.localEulerAngles = new Vector3(0, 0, -direction);
+        //transform.eulerAngles = new Vector3(0, 0, -direction);
     }
 
     void ChangePosition(Vector2 position)

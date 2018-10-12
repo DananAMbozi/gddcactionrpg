@@ -6,15 +6,17 @@ public class ChangeStats : MonoBehaviour
 {
 
     public int h, s, d;
-    public float ms;
+    public float ms, atks, st;
     public Sprite Sprite;
 
     public void Changestats()
     {
         PlayerStats.health = h;
-        PlayerStats.atkspeed = s;
+        PlayerStats.atkMS = s;
         PlayerStats.damage = d;
         PlayerStats.movespeed = ms;
+        PlayerStats.atkCD = atks;
         PlayerStats.Sprite = Sprite;
+        PlayerStats.swingTime = st;
     }
 }

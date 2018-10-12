@@ -31,4 +31,17 @@ public class ObjectHealth : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+ //       if (!isEnemy)
+   //     {
+            health -= damage;
+            if (health <= 0)
+            {
+            GameObject.Find("Player").GetComponent<PlayerHealth>().ChangePoints(reward);
+            Destroy(gameObject);
+            }
+   //     }
+    }
+
 }

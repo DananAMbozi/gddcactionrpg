@@ -574,6 +574,8 @@ MonoBehaviour:
   s: 1500
   d: 100
   ms: 1.5
+  atks: 0.4
+  st: 0.1
   Sprite: {fileID: 0}
 --- !u!114 &865053085
 MonoBehaviour:
@@ -954,6 +956,8 @@ MonoBehaviour:
   s: 750
   d: 5
   ms: 0.8
+  atks: 0.4
+  st: 0.2
   Sprite: {fileID: 0}
 --- !u!114 &2065857843
 MonoBehaviour:
@@ -1118,6 +1122,8 @@ MonoBehaviour:
   s: 750
   d: 10
   ms: 1
+  atks: 0.4
+  st: 0.1
   Sprite: {fileID: 0}
 --- !u!114 &2100587418
 MonoBehaviour:

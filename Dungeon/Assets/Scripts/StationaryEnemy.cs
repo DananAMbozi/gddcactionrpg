@@ -6,7 +6,7 @@ public class StationaryEnemy : MonoBehaviour {
 
     // Use this for initialization
 
-    int damage = 25;
+   public int damage = 25;
 	void Start () {
 		
 	}
@@ -20,7 +20,7 @@ public class StationaryEnemy : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            other.SendMessage("TakeDamageFromEnemy", damage, SendMessageOptions.DontRequireReceiver);
+            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
         }
     }
 

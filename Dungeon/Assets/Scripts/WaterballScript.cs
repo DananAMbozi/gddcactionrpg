@@ -8,9 +8,9 @@ public class WaterballScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Breakable") || other.CompareTag("Enemy"))
+        if (!other.CompareTag("GunEnemy") && !other.CompareTag("Attack") && !other.CompareTag("low"))
         {
-            other.SendMessage("TakeDamageFromEnemy", damage, SendMessageOptions.DontRequireReceiver);
+            other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
         }
     }

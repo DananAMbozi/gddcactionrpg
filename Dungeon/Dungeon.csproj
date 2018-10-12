@@ -303,26 +303,33 @@
     <Compile Include="Assets\Scripts\BoxmenuScript.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\ChangeStats.cs" />
+    <Compile Include="Assets\Scripts\ChaseEnemySword.cs" />
+    <Compile Include="Assets\Scripts\ChasePlayer.cs" />
     <Compile Include="Assets\Scripts\DrawMap.cs" />
     <Compile Include="Assets\Scripts\DynamicLevelChange.cs" />
+    <Compile Include="Assets\Scripts\EnemySword.cs" />
     <Compile Include="Assets\Scripts\FiniteMapGeneration.cs" />
+    <Compile Include="Assets\Scripts\GameMusic.cs" />
     <Compile Include="Assets\Scripts\GenMap.cs" />
     <Compile Include="Assets\Scripts\GunEnemyScript.cs" />
     <Compile Include="Assets\Scripts\HealthAndPoints.cs" />
     <Compile Include="Assets\Scripts\HUDScript.cs" />
     <Compile Include="Assets\Scripts\LevelRandomizer.cs" />
-    <Compile Include="Assets\Scripts\LevelSpawnScript.cs" />
     <Compile Include="Assets\Scripts\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
+    <Compile Include="Assets\Scripts\MaxEnemies.cs" />
     <Compile Include="Assets\Scripts\ObjectHealth.cs" />
+    <Compile Include="Assets\Scripts\oldsowrdattack.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerChangeLevel.cs" />
+    <Compile Include="Assets\Scripts\playerDetector.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSkills.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\SceneMaker.cs" />
     <Compile Include="Assets\Scripts\StationaryEnemy.cs" />
+    <Compile Include="Assets\Scripts\SwordAttack.cs" />
     <Compile Include="Assets\Scripts\WaterballScript.cs" />
   </ItemGroup>
   <ItemGroup>
