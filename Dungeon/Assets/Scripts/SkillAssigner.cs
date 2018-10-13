@@ -1,38 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public static class SkillAssigner{
+/*
+ * This class is to be used whenever equipping a skill.
+ * Skill names must be added to enum skillNames whenever a skill class
+ * is designed
+ * */
+public static class SkillAssigner
+{
+    public enum SkillNames { TESTFIREBALL, SKILLMIST, SKILLHASTE, SKILLMINE };
 
     /*
-     * This class is to be used whenever equipping a skill.
-     * Skill names must be added to enum skillNames whenever a skill class
-     * is designed
+     * Attaches skill script corresponding to int skillID onto the character equipping the skill.
+     * skillID will be obtained from skill pickup objects (not implemented yet),
+     * which will contain an ID in enum skillNames of the corresponding skill.
+     * 
+     * eg. Fireball skill pickup object has int skillID = SkillAssigner.skillNames.TESTFIREBALL.
+     * When the player equips the pickup, its skillID is passed as a parameter for this
+     * function.
      * */
-
-    public enum skillNames{TESTFIREBALL, SKILLMIST, SKILLHASTE, SKILLMINE};
-
-    public static Skills AssignSkill(GameObject character, int skillID)
+    public static Skills AssignSkill(GameObject character, SkillNames skill)
     {
-        /*
-         * Attaches skill script corresponding to int skillID onto the character equipping the skill.
-         * skillID will be obtained from skill pickup objects (not implemented yet),
-         * which will contain an ID in enum skillNames of the corresponding skill.
-         * 
-         * eg. Fireball skill pickup object has int skillID = SkillAssigner.skillNames.TESTFIREBALL.
-         * When the player equips the pickup, its skillID is passed as a parameter for this
-         * function.
-         * */
-        switch(skillID)
+        switch (skill)
         {
-            case (int)skillNames.TESTFIREBALL:
+            case SkillNames.TESTFIREBALL:
                 return character.AddComponent<TestFireball>();
-            case (int)skillNames.SKILLMIST:
+            case SkillNames.SKILLMIST:
                 return character.AddComponent<SkillMist>();
-            case (int)skillNames.SKILLHASTE:
+            case SkillNames.SKILLHASTE:
                 return character.AddComponent<SkillHaste>();
-            case (int)skillNames.SKILLMINE:
+            case SkillNames.SKILLMINE:
                 return character.AddComponent<SkillMine>();
             default:
                 return null;

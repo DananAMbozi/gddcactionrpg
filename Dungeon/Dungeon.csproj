@@ -318,6 +318,7 @@
     <Compile Include="Assets\Scripts\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
     <Compile Include="Assets\Scripts\MaxEnemies.cs" />
+    <Compile Include="Assets\Scripts\MineScript.cs" />
     <Compile Include="Assets\Scripts\ObjectHealth.cs" />
     <Compile Include="Assets\Scripts\oldsowrdattack.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
@@ -340,6 +341,7 @@
     <Compile Include="Assets\Scripts\SkillScripts\TestFireball.cs" />
     <Compile Include="Assets\Scripts\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\SwordAttack.cs" />
+    <Compile Include="Assets\Scripts\testSkillSwap.cs" />
     <Compile Include="Assets\Scripts\WaterballScript.cs" />
   </ItemGroup>
   <ItemGroup>

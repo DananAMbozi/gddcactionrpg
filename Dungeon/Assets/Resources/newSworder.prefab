@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 61942628078276336}
   m_Layer: 0
   m_Name: newSworder
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5317f74833d5c4f96dc48e25e5de93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
 --- !u!114 &114797432147294406
 MonoBehaviour:
   m_ObjectHideFlags: 1

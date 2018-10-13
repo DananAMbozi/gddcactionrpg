@@ -10,6 +10,8 @@ TagManager:
   - GunEnemy
   - EnemyAttack
   - Invincible
+  - Enemy
+  - Breakable
   layers:
   - Default
   - TransparentFX

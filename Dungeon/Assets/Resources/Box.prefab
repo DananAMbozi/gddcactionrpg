@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114224414303371390}
   m_Layer: 9
   m_Name: Box
-  m_TagString: low
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
