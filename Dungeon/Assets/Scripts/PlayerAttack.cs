@@ -1,46 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public int damage = 1;
+    public float delay = 0;     //Delay give the option for aoe damage timer starts after isDying is triggered
+    public bool isDying = false;//Refer to testScene and SkillMine for an example
 
-    public int damage = 10;
-    public float delay = 0;
+    private float timeToDeath;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Breakable"))
+        if (IsBreakableEnemy(other))
         {
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-            Debug.Log(damage);
-            if (delay <= 0)
-            {
-                endAttack();
-            }
-
-            else
-            {
-                destroyDelay(delay);
-            }
+            DestroyDelay(delay);
         }
     }
 
-    public void endAttack()
+    private static bool IsBreakableEnemy(Collider2D other)
     {
-        Destroy(gameObject);
-        Debug.Log("1");
+        return other.CompareTag("Enemy") || other.CompareTag("Breakable");
     }
 
-    public void destroyDelay(float timer)
+    private void Update()
+    {
+        if (!isDying)
+            return;
+
+        timeToDeath -= Time.deltaTime;
+        if (timeToDeath <= 0)
+            Destroy(gameObject);
+    }
+
+    private void DestroyDelay(float timer)
     {
         if (timer <= 0)
-        {
-            endAttack();
-        }
-        else
-        {
-            timer -= Time.deltaTime;
-        }
+            Destroy(gameObject);
+
+        isDying = true;
+        timeToDeath = timer;
     }
 }

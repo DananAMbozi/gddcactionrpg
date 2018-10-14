@@ -12,7 +12,7 @@ public class SkillMine : Skills
         activeSkill = true; //This is an active skill
         maxSkillCooldown = 0.5f;
         mine = (GameObject)Resources.Load("Mine");
-        power = 1f;
+        power = 50f;
     }
 
     // Update is called once per frame

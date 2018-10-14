@@ -13,6 +13,7 @@ public abstract class Skills : MonoBehaviour{
     protected float maxSkillCooldown;    //Cooldown of the skill
     protected float skillCooldown;    //Current cooldown of the skill
     protected float power;  //Power of the skill, whether it's dmg or healing (1.00 = 100%)
+    protected float speed; //Movespeed of attack (750 for fireball, 0 for mine)
     protected bool activeSkill = true;  //Whether the skill is active or passive
 
     public float GetSkillCooldown()

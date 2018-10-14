@@ -6,8 +6,6 @@ using UnityEngine;
 public class TestFireball : Skills {
 
     public GameObject fireball; //Used to create the fireball prefab
-    int playerAttack = 1;   //Temporary, pls remove
-    float playerAttackSpeed = 750f; //Temporary, pls remove
 
     // Use this for initialization
     void Start () {
@@ -15,6 +13,7 @@ public class TestFireball : Skills {
         maxSkillCooldown = 0.5f;
         fireball = (GameObject)Resources.Load("Fireball");
         power = 10f;
+        speed = 750;
 	}
 	
 	// Update is called once per frame
@@ -31,8 +30,9 @@ public class TestFireball : Skills {
 
             //Create fireball
             GameObject newRAttack = Instantiate(fireball, transform.position, transform.rotation);
-            newRAttack.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, playerAttackSpeed));
-            newRAttack.GetComponent<PlayerAttack>().damage = (int)power * playerAttack;
+            newRAttack.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, speed));
+            Debug.Log(power);
+            newRAttack.GetComponent<PlayerAttack>().damage = (int)power;
         }
     }
 
