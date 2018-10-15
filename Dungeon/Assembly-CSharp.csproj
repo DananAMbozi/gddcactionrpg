@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\MaxEnemies.cs" />
     <Compile Include="Assets\Scripts\ObjectHealth.cs" />
     <Compile Include="Assets\Scripts\oldsowrdattack.cs" />
+    <Compile Include="Assets\Scripts\OrbitingMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\playerDetector.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -88,7 +89,6 @@
     <Compile Include="Assets\Scripts\PlayerSkills.cs" />
     <Compile Include="Assets\Scripts\PlayerSkillSet.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\ShieldConfig.cs" />
     <Compile Include="Assets\Scripts\SkillAssigner.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffInvincible.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffSpeedUp.cs" />
@@ -96,8 +96,9 @@
     <Compile Include="Assets\Scripts\SkillScripts\SkillHaste.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\SkillMine.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\SkillMist.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\SkillOrbits.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\SkillOrbitShield.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Skills.cs" />
-    <Compile Include="Assets\Scripts\SkillScripts\SkillShield.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\TestFireball.cs" />
     <Compile Include="Assets\Scripts\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\SwordAttack.cs" />

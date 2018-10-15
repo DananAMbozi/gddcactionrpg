@@ -31,7 +31,7 @@ public static class SkillAssigner
             case SkillNames.SKILLMINE:
                 return character.AddComponent<SkillMine>();
             case SkillNames.SHIELD:
-                return character.AddComponent<SkillShield>();
+                return character.AddComponent<SkillOrbitShield>();
             default:
                 return null;
         }

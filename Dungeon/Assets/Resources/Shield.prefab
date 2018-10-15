@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4878231478853664}
   - component: {fileID: 212572663965123390}
-  - component: {fileID: 114944984696590474}
+  - component: {fileID: 114340384785289516}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114944984696590474
+--- !u!114 &114340384785289516
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,10 +49,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813591851099382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7ddaf50d7605b40b1ee504cc1a9110, type: 3}
+  m_Script: {fileID: 11500000, guid: d8d060f28a5d0944b890badc6a987d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  following: {fileID: 0}
   parentSkill: {fileID: 0}
 --- !u!212 &212572663965123390
 SpriteRenderer:
