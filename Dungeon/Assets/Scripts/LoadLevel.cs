@@ -15,10 +15,10 @@ public class LoadLevel : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && (GameObject.FindWithTag("Enemy") == null)) 
         {
             SceneManager.LoadScene(LeveltoLoad);
             other.SendMessage("ChangePosition", position, SendMessageOptions.DontRequireReceiver);
-        }
+        }   
     }
 }

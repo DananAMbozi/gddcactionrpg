@@ -12,6 +12,7 @@ public class PlayerSkillSet : MonoBehaviour
         key2skill.Add(KeyCode.Space, SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMINE));
         key2skill.Add(KeyCode.LeftShift, SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLHASTE));
         key2skill.Add(KeyCode.E, SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMIST));
+        SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SHIELD);
     }
 
     // Update is called once per frame

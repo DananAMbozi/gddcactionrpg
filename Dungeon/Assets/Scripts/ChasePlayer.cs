@@ -17,8 +17,8 @@ public class ChasePlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Vector2 dir = Move();
-        Rotate(dir);
+        //Vector2 dir = Move();
+        //Rotate(dir);
 	}
 
     Vector2 Move()
