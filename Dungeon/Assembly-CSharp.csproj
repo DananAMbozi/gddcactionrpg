@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\PlayerSkills.cs" />
     <Compile Include="Assets\Scripts\PlayerSkillSet.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\ProjectileShield.cs" />
     <Compile Include="Assets\Scripts\SkillAssigner.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffInvincible.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffSpeedUp.cs" />

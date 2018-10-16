@@ -12,6 +12,7 @@ public class SkillOrbitShield : SkillOrbits {
         radius = 2f;
         orbitObject = (GameObject)Resources.Load("Shield");
         power = 1f;
+        orbitObject.GetComponent<ProjectileShield>().SetHp((int)Mathf.Round(power));
         speed = -4f;
         SetMaxOrbits(maxOrbits);
 	}

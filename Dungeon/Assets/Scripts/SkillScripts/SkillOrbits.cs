@@ -24,22 +24,41 @@ public abstract class SkillOrbits : Skills {
             }
             else
             {
-                for(int i = 0; i < orbitTracker.Length; i++)
+                for (int i = 0; i < orbitTracker.Length; i++)
                 {
-                    if(orbitTracker[i] == null)
+                    if (orbitTracker[i] == null)
                     {
                         orbitTracker[i] = orbitClone;
-                        if(i - 1 >= 0)
+                        if (i - 1 >= 0) //Check the position of the orbit behind it and base its position on that
                         {
-                            //Unity's rotation
-                            //   orbitClone.transform.position = gameObject.transform.position + new Vector3(radius, 0f, 0f);
-                            //   orbitClone.transform.RotateAround(gameObject.transform.position, Vector3.forward, orbitTracker[i - 1].GetComponent<ShieldConfig>().GetAngle() + (angle * 180 / Mathf.PI));
+                            // Unity's rotation
+                            // orbitClone.transform.position = gameObject.transform.position + new Vector3(radius, 0f, 0f);
+                            // orbitClone.transform.RotateAround(gameObject.transform.position, Vector3.forward, orbitTracker[i - 1].GetComponent<ShieldConfig>().GetAngle() + (angle * 180 / Mathf.PI));
 
-                            //Homemade rotation. Refer to rotation matrix (2D)
+                            // Homemade rotation. Refer to rotation matrix (2D)
                             Vector3 positionOffset = orbitTracker[i - 1].transform.position - gameObject.transform.position;
                             float posX = positionOffset.x * Mathf.Cos(angle) + positionOffset.y * Mathf.Sin(angle);
                             float posY = positionOffset.y * Mathf.Cos(angle) - positionOffset.x * Mathf.Sin(angle);
                             orbitTracker[i].transform.position = new Vector3(posX + gameObject.transform.position.x, posY + gameObject.transform.position.y, 0f);
+                        }
+                        else // If the shield to be replaced is in the 0th position, need to check if an orbit exists first
+                        {
+                            bool referenceFound = false;    // If there exists an orbit, referenceFound = true;
+                            int counter = orbitTracker.Length - 1;  // Count backwards from maxOrbits to 1
+                            while((!referenceFound) && (counter > 0))
+                            {
+                                if (orbitTracker[counter] != null)
+                                    referenceFound = true;
+                                else
+                                    counter -= 1;
+                            }
+                            if (referenceFound) // Set rotation relative to the orbit found (same formula as above). Can probably be merged with code above
+                            {
+                                Vector3 positionOffset = orbitTracker[counter].transform.position - gameObject.transform.position;
+                                float posX = positionOffset.x * Mathf.Cos(angle * (maxOrbits - counter)) + positionOffset.y * Mathf.Sin(angle * (maxOrbits - counter));
+                                float posY = positionOffset.y * Mathf.Cos(angle * (maxOrbits - counter)) - positionOffset.x * Mathf.Sin(angle * (maxOrbits - counter));
+                                orbitTracker[0].transform.position = new Vector3(posX + gameObject.transform.position.x, posY + gameObject.transform.position.y, 0f);
+                            }
                         }
                         i = orbitTracker.Length;
                     }
@@ -58,7 +77,7 @@ public abstract class SkillOrbits : Skills {
         if (maxOrbits <= 1)
             radius = 0f;
         orbitTracker = new GameObject[orbitNumber];
-        for(int i = 0; i < orbitTracker.Length; i++)
+        for (int i = 0; i < orbitTracker.Length; i++)
         {
             if (orbitTracker[i] != null)
                 Destroy(orbitTracker[i]);
@@ -74,5 +93,20 @@ public abstract class SkillOrbits : Skills {
     public int GetMaxOrbits()
     {
         return maxOrbits;
+    }
+
+    public int GetOrbits()
+    {
+        return orbits;
+    }
+
+    public void SubtractOrbit()
+    {
+        orbits -= 1;
+    }
+
+    public void AddOrbit()
+    {
+        orbits += 1;
     }
 }

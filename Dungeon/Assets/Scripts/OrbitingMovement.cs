@@ -5,14 +5,22 @@ using UnityEngine;
 //Class for generic orbiting movements. Requires a gameObject to orbit around or else will destroy itself
 public class OrbitingMovement : MonoBehaviour
 {
-
     private float radius = 0f;  //Possibly obselete, as the radius is manipulated in the Orbit skill class
     private Vector3 offset;
     private float speed = -4f;
     private GameObject following = null;
     private bool tracking = false;
     private Vector3 rotationPoint = new Vector3(0f, 0f, 0f);
-    public Skills parentSkill = null;
+    public SkillOrbits parentSkill = null;
+
+    ~OrbitingMovement()
+    {
+        //GameObject is destroyed elsewhere, this destructor is called to subtract orbit from SkillOrbits list, if exists
+        if (parentSkill != null)
+        {
+            parentSkill.SubtractOrbit();
+        }
+    }
 
     public void SetFollowing(GameObject following)
     {
