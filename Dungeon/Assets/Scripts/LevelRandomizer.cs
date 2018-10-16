@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelRandomizer : MonoBehaviour {
+public class LevelRandomizer : MonoBehaviour
+{
 
     public Transform box;
     public Transform rock;
-    public Transform statEn;
+    //public Transform statEn;
     public Transform shootEn;
-    public GameObject followEn;
+    public Transform followEn;
     private GameObject player;
 
     void Start()
@@ -16,32 +17,37 @@ public class LevelRandomizer : MonoBehaviour {
         player = GameObject.Find("Player");
         player.GetComponent<MaxEnemies>().addMax();
         int max = player.GetComponent<MaxEnemies>().GetMax();
-        int numberOfBoxes = (int)(3 * Random.value) + 2;
-        for (int i = 0; i < numberOfBoxes; i++)
+        if (PlayerStats.randomLevel)
         {
-            Instantiate(box, new Vector3(Random.Range(-10, 12), Random.Range(-3, 3), 1), Quaternion.identity);
-        }
-        int numberOfRocks = (int)(3 * Random.value);
-        for (int i = 0; i < numberOfRocks; i++)
-        {
-            Instantiate(rock, new Vector3(Random.Range(-10, 12), Random.Range(-3, 3), 0), Quaternion.identity);
-        }
-        int numberStaEn = (int)(max * Random.value);
-        for (int i = 0; i < numberStaEn; i++)
-        {
-            Instantiate(statEn, new Vector3(Random.Range(-10, 12), Random.Range(-3, 3), 0), Quaternion.identity);
-        }
-        int numberShootEn = (int)(max * Random.value);
-        for (int i = 0; i < numberShootEn; i++)
-        {
-            Instantiate(shootEn, new Vector3(Random.Range(-10, 12), Random.Range(-3, 3), 0), Quaternion.Euler(new Vector3(0, 0, (int)(Random.Range(0, 3))*90)));
-        }
-        int numFollowEn = (int)(max * Random.value);
-        for (int i = 0; i < numFollowEn; i++)
-        {
-            Instantiate(followEn, new Vector3(Random.Range(-10, 12), Random.Range(-3, 3), 0), Quaternion.Euler(new Vector3(0, 0, (int)(Random.Range(0, 3)) * 90)));
+            max = 10;
         }
 
+        int numberOfBoxes = (int)(3 * Random.value) + 2;
+        SpawnObj(box, numberOfBoxes, false);
+
+        int numberOfRocks = (int)(3 * Random.value);
+        SpawnObj(rock, numberOfRocks, false);
+
+        int numberShootEn = (int)(max * Random.value);
+        SpawnObj(shootEn, numberShootEn, true);
+
+        int numFollowEn = (int)(max * Random.value);
+        SpawnObj(followEn, numFollowEn, false);
+    }
+    void SpawnObj(Transform t, int num, bool rotate)
+    {
+        for (int i = 0; i < num; i++)
+        {
+            Quaternion q = Quaternion.identity;
+            if (rotate)
+            {
+                q = Quaternion.Euler(0, 0, Random.Range(0, 7) * 45);
+            }
+            Transform newObj = Instantiate(t, new Vector3(0, 0, 0), q);
+            Vector3 newPos = new Vector3(Random.Range(-9, 9), Random.Range(-3, 3), 1);
+            newObj.position = transform.position;
+            newObj.localPosition += newPos;
+        }
     }
 }
 

@@ -31,7 +31,6 @@ public class TestFireball : Skills {
             //Create fireball
             GameObject newRAttack = Instantiate(fireball, transform.position, transform.rotation);
             newRAttack.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, speed));
-            Debug.Log(power);
             newRAttack.GetComponent<PlayerAttack>().damage = (int)power;
         }
     }

@@ -7,6 +7,7 @@ public class ChasePlayer : MonoBehaviour {
     private Rigidbody2D box;
     public float boxSpeed;
     private GameObject player;
+    public int roomSize = 25;
 
 	// Use this for initialization
 	void Awake () {
@@ -26,7 +27,11 @@ public class ChasePlayer : MonoBehaviour {
         Vector2 playerPos = player.GetComponent<Rigidbody2D>().position;
         Vector2 boxPos = box.position;
         Vector2 displacement = playerPos - boxPos;
+        if (displacement.magnitude < roomSize)
+        {
         box.position += (boxSpeed*Time.deltaTime/10)*displacement;
+
+        }
         return displacement.normalized;
     }
     void Rotate(Vector2 direction)

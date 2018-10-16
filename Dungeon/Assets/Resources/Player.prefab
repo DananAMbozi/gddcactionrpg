@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114327430579633552}
   - component: {fileID: 114933968163828832}
   - component: {fileID: 114467538994350946}
+  - component: {fileID: 114091908396807598}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -110,6 +111,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114091908396807598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934054388923302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9639b2a9e1a0e8d4c8da51941e25c3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location: {x: 0, y: 0}
 --- !u!114 &114327430579633552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c027acb19bacce4da6c563cd3323fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   direction: 0
+  movement: {x: 0, y: 0}
 --- !u!114 &114933968163828832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7000baede9fc9334d89dbbbb4bde7359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

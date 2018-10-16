@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1995589264944810}
+  m_IsPrefabAsset: 1
+--- !u!1 &1995589264944810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4247929342999912}
+  - component: {fileID: 114120256630373420}
+  - component: {fileID: 114112633094811850}
+  m_Layer: 0
+  m_Name: NotWorkingMapObject15-10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4247929342999912
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995589264944810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114112633094811850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995589264944810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7c1885ed1da624e8c3fedeb27cef18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walls:
+  - {fileID: 1661937562225136, guid: 4b8d918093c23d4498b1d3f9e2612e49, type: 2}
+  - {fileID: 1661937562225136, guid: 4b8d918093c23d4498b1d3f9e2612e49, type: 2}
+  - {fileID: 1661937562225136, guid: 4b8d918093c23d4498b1d3f9e2612e49, type: 2}
+  - {fileID: 1255652350868300, guid: 8c71057883d6f3848ace8ad4545aac25, type: 2}
+  - {fileID: 1112152425378028, guid: 14b3bb87e104e2545ac9897fd6994a38, type: 2}
+  - {fileID: 1141045390321376, guid: c035d6bffe815de4697940a67bb10a10, type: 2}
+  - {fileID: 1552749705058790, guid: 4f91e7cdefa69bf4f93e78accb512535, type: 2}
+  - {fileID: 1172382568794762, guid: 13300467c15777a47a1591d4e647069e, type: 2}
+  - {fileID: 1849443698211848, guid: e42e1fd72ee41a2409048c2a1b443cfd, type: 2}
+  - {fileID: 1189726796493260, guid: cf7e8f182753b554a8b8023e58d46a82, type: 2}
+  - {fileID: 1525626336062384, guid: af7e826a014d0e44bae3b2b119c1bc3b, type: 2}
+  - {fileID: 1808985337965844, guid: a72255f9df637c248888273f4dc1cb2d, type: 2}
+  - {fileID: 1769805365622710, guid: e9b10c2668ca8c34f8917df4140a7120, type: 2}
+  - {fileID: 1365966414273206, guid: 0a93727863472d5469f9b15f26ab1080, type: 2}
+  - {fileID: 1516852228241874, guid: 401e8ab0aa0f92748a94b9d435ed08a2, type: 2}
+  - {fileID: 1421144524426642, guid: b3b23c7345dfa95408d9ea2d0afd2463, type: 2}
+  - {fileID: 1858581922328114, guid: 395baf105bdd13e4aa6fc2f8d164255e, type: 2}
+  distanceBetweenRooms: 100
+  dynamicLevelBounds: {fileID: 0}
+--- !u!114 &114120256630373420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995589264944810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4d4d4c19496024ab3ef3c2ade574a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MapMaker: {fileID: 0}
+  isThisMapScene: 1

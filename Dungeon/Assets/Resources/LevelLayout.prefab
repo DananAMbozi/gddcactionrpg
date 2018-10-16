@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeveltoLoad: SampleScene
-  position: {x: 0, y: 6.5}
+  position: {x: 0, y: 5.5}
 --- !u!114 &114519196667628668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeveltoLoad: SampleScene
-  position: {x: 0, y: -6.5}
+  position: {x: 0, y: -5.5}
 --- !u!114 &114841940075663842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -503,6 +503,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   box: {fileID: 4394950991333416, guid: 51ab12c80c5535247a512ad0fc4dd6b4, type: 2}
   rock: {fileID: 4957757657916460, guid: bce9e130fb7f85d45b2a2f97f4e99f3d, type: 2}
-  statEn: {fileID: 4461977758400398, guid: d44bf0a5c239fb04b8af0dfd00889954, type: 2}
   shootEn: {fileID: 4195686451256164, guid: 9e83cc2736f9d6d4994ed49db4350364, type: 2}
   followEn: {fileID: 1076621905948960, guid: 258e410a24b177d4f84ebdef5e11f4aa, type: 2}

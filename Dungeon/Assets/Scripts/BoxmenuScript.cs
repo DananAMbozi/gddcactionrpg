@@ -18,6 +18,7 @@ public class BoxmenuScript : MonoBehaviour {
     {
         if (other.CompareTag("Player") || other.CompareTag("Attack") || (other.CompareTag("Invincible")))
         {
+            OnDeath.isQuitting = true;
             SceneManager.LoadScene("CharacterSelect");
         }
     }

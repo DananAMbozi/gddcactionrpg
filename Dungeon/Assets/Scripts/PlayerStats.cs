@@ -14,5 +14,8 @@ public static class PlayerStats
     public static float swingTime;
     public static int Mdamage = 10;
     public static float MatkCD;
+    public static int numRooms;
+    public static int distanceBtwnRooms;
+    public static bool randomLevel;
 
 }

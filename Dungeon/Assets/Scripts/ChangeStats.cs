@@ -5,9 +5,10 @@ using UnityEngine;
 public class ChangeStats : MonoBehaviour
 {
 
-    public int h, s, d;
+    public int h, s, d, nR;
     public float ms, atks, st;
     public Sprite Sprite;
+    public bool b;
 
     public void Changestats()
     {
@@ -18,5 +19,7 @@ public class ChangeStats : MonoBehaviour
         PlayerStats.atkCD = atks;
         PlayerStats.Sprite = Sprite;
         PlayerStats.swingTime = st;
+        PlayerStats.numRooms = nR;
+        PlayerStats.randomLevel = b;
     }
 }

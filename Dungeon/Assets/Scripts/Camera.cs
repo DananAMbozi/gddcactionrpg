@@ -34,7 +34,12 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (follow)
+        //Debug.Log(player == null);
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
+        }
+        if (follow && player != null)
         {
             transform.position = FollowCam(player.transform.position);
         }
@@ -43,7 +48,18 @@ public class Camera : MonoBehaviour
     Vector3 FollowCam(Vector3 pos)
     {
         Vector3 newpos;
-        newpos = new Vector3(Mathf.Clamp(pos.x,minPos.x,maxPos.x), Mathf.Clamp(pos.y, minPos.y, maxPos.y), -10);
+        newpos = new Vector3(Mathf.Clamp(pos.x, minPos.x, maxPos.x), Mathf.Clamp(pos.y, minPos.y, maxPos.y), -10);
         return newpos;
+    }
+    public void FollowOn()
+    {
+        follow = true;
+        player = GameObject.Find("Player");
+        //Debug.Log(player == null);
+        Vector2 v = new Vector2(1, 1);
+        float range = 10000;
+        minPos = -range * v;
+        maxPos = range * v;
+
     }
 }
