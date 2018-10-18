@@ -847,7 +847,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Level Gen Test
+  m_Text: Level Gen
 --- !u!222 &895318710
 CanvasRenderer:
   m_ObjectHideFlags: 0

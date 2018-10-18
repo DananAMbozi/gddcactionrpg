@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class LevelRandomizer : MonoBehaviour
 {
+    private GameObject player;
 
     public Transform box;
     public Transform rock;
     //public Transform statEn;
     public Transform shootEn;
     public Transform followEn;
-    private GameObject player;
+    public Transform explodeEn;
+    public float minX = -8.5f;
+    public float maxX = 8.5f;
+    public float minY = -3;
+    public float maxY = 3;
+
 
     void Start()
     {
@@ -33,6 +39,9 @@ public class LevelRandomizer : MonoBehaviour
 
         int numFollowEn = (int)(max * Random.value);
         SpawnObj(followEn, numFollowEn, false);
+
+        int numExplodeEn = (int)(max * Random.value);
+        SpawnObj(explodeEn, numExplodeEn, false);
     }
     void SpawnObj(Transform t, int num, bool rotate)
     {
@@ -44,7 +53,7 @@ public class LevelRandomizer : MonoBehaviour
                 q = Quaternion.Euler(0, 0, Random.Range(0, 7) * 45);
             }
             Transform newObj = Instantiate(t, new Vector3(0, 0, 0), q);
-            Vector3 newPos = new Vector3(Random.Range(-9, 9), Random.Range(-3, 3), 1);
+            Vector3 newPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
             newObj.position = transform.position;
             newObj.localPosition += newPos;
         }

@@ -2,19 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StationaryEnemy : MonoBehaviour {
+public class AOEdamage : MonoBehaviour {
 
-    // Use this for initialization
-
+   public bool attack = true;
    public int damage = 25;
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
