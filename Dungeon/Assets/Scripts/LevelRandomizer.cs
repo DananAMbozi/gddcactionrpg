@@ -25,7 +25,7 @@ public class LevelRandomizer : MonoBehaviour
         int max = player.GetComponent<MaxEnemies>().GetMax();
         if (PlayerStats.randomLevel)
         {
-            max = 10;
+            max = 4;
         }
 
         int numberOfBoxes = (int)(3 * Random.value) + 2;
