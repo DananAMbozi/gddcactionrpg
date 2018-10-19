@@ -12,6 +12,7 @@ TagManager:
   - Invincible
   - Enemy
   - Breakable
+  - Levelbounds
   layers:
   - Default
   - TransparentFX

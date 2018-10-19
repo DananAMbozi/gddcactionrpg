@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Map\CreateLevelFromMap.cs" />
      <Compile Include="Assets\Scripts\Map\DrawMap.cs" />
      <Compile Include="Assets\Scripts\Map\GenMap.cs" />
+     <Compile Include="Assets\Scripts\Map\LevelboundsTagger.cs" />
      <Compile Include="Assets\Scripts\Map\LocationOnMap.cs" />
      <Compile Include="Assets\Scripts\Map\Map.cs" />
      <Compile Include="Assets\Scripts\Map\old.cs" />

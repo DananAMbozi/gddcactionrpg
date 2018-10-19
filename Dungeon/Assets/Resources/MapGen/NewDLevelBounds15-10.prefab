@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114435996627964454}
   m_Layer: 0
   m_Name: NewDLevelBounds15-10
-  m_TagString: Untagged
+  m_TagString: Levelbounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,9 +129,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4278372861844276}
+  - component: {fileID: 114831436722304238}
   m_Layer: 0
   m_Name: Sides
-  m_TagString: Untagged
+  m_TagString: Levelbounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -478,6 +479,10 @@ MonoBehaviour:
   shootEn: {fileID: 4195686451256164, guid: 9e83cc2736f9d6d4994ed49db4350364, type: 2}
   followEn: {fileID: 4422771078236654, guid: 3d216f319266be34f97031e9e6f92f73, type: 2}
   explodeEn: {fileID: 4422771078236654, guid: 6f4cd6ddde348c34aa3e71f2021cfea9, type: 2}
+  minX: -8.5
+  maxX: 8.5
+  minY: -3
+  maxY: 3
 --- !u!114 &114737095326345086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,6 +495,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   change: {x: 0, y: 1, z: 0}
+--- !u!114 &114831436722304238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698477735831710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35fd1e005e982b438911bc336a12438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114866946941995258
 MonoBehaviour:
   m_ObjectHideFlags: 1
