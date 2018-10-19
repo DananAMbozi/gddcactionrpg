@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     private static bool IsBreakableEnemy(Collider2D other)
     {
-        return other.CompareTag("Enemy") || other.CompareTag("Breakable") || other.CompareTag("Levelbounds");
+        return other.CompareTag("Enemy") || other.CompareTag("GunEnemy") || other.CompareTag("Breakable") || other.CompareTag("Levelbounds");
     }
 
     private void Update()

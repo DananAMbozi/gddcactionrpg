@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class GunEnemyScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private GameObject player;
+    private Rigidbody2D box;
+    public int roomSize = 25;
+
+    void Awake () {
+        box = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+    }
+
+    void Update () {
+        Vector2 playerPos = player.GetComponent<Rigidbody2D>().position;
+        Vector2 boxPos = box.position;
+        Vector2 displacement = playerPos - boxPos;
+        if (displacement.magnitude < roomSize)
+        {
+            cooldownElapsed += Time.deltaTime;
+        if (cooldownElapsed >= cooldown)
+        {
+            cooldownElapsed = 0;
+            Attack(speed);
+        }
+
+        }
+
+    }
 
     double cooldown = 1;
     double cooldownElapsed = 1;
@@ -23,12 +39,7 @@ public class GunEnemyScript : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        cooldownElapsed += Time.deltaTime;
-        if (cooldownElapsed >= cooldown)
-        {
-            cooldownElapsed = 0;
-            Attack(speed);
-        }
+
     }
 
     void Attack(float s)

@@ -12,14 +12,12 @@ public class ChasePlayer : MonoBehaviour
     private bool chase;
     public bool autochase = true;
 
-    // Use this for initialization
     void Awake()
     {
         box = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 playerPos = player.GetComponent<Rigidbody2D>().position;
