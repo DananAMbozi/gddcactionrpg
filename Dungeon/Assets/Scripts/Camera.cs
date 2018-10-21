@@ -8,6 +8,7 @@ public class Camera : MonoBehaviour
     public static bool CameraExists;
     public GameObject player;
     public bool follow;
+    public Vector3 center;
     public Vector2 minPos;
     public Vector2 maxPos;
     //private Vector2 pos;
@@ -15,6 +16,7 @@ public class Camera : MonoBehaviour
 
     void Start()
     {
+        center = new Vector3(5100, 5100, -10);
         if (follow)
         {
             player = GameObject.Find("Player");
@@ -48,18 +50,19 @@ public class Camera : MonoBehaviour
     Vector3 FollowCam(Vector3 pos)
     {
         Vector3 newpos;
-        newpos = new Vector3(Mathf.Clamp(pos.x, minPos.x, maxPos.x), Mathf.Clamp(pos.y, minPos.y, maxPos.y), -10);
+        newpos = new Vector3(Mathf.Clamp(pos.x, center.x - minPos.x, center.x - maxPos.x), Mathf.Clamp(pos.y, center.y - minPos.y, center.y - maxPos.y), -10);
         return newpos;
     }
-    public void FollowOn()
-    {
-        follow = true;
-        player = GameObject.Find("Player");
-        //Debug.Log(player == null);
-        Vector2 v = new Vector2(1, 1);
-        float range = 10000;
-        minPos = -range * v;
-        maxPos = range * v;
 
-    }
+    //public void FollowOn()
+    //{
+    //    follow = true;
+    //    player = GameObject.Find("Player");
+    //    //Debug.Log(player == null);
+    //    Vector2 v = new Vector2(1, 1);
+    //    float range = 10000;
+    //    minPos = -range * v;
+    //    maxPos = range * v;
+
+    //}
 }

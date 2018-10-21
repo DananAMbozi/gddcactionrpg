@@ -166,6 +166,3 @@ C:\Users\Sean\Documents\GitHub\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.c
 C:\Users\Sean\Documents\GitHub\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Sean\Documents\GitHub\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.dll
 C:\Users\Sean\Documents\GitHub\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.pdb
-D:\Stuff\GitRepos\Dungeon\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-D:\Stuff\GitRepos\Dungeon\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.dll
-D:\Stuff\GitRepos\Dungeon\gddcactionrpg\Dungeon\obj\Debug\Assembly-CSharp.pdb

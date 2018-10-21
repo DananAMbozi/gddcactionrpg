@@ -10,7 +10,6 @@ public class LoadLevel : MonoBehaviour {
 
     public void StartGame()
     {
-        OnDeath.isQuitting = true;
         SceneManager.LoadScene(LeveltoLoad);
     }
 
@@ -18,7 +17,6 @@ public class LoadLevel : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            OnDeath.isQuitting = true;
             SceneManager.LoadScene(LeveltoLoad);
             other.SendMessage("ChangePosition", position, SendMessageOptions.DontRequireReceiver);
         }

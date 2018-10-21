@@ -303,11 +303,17 @@
     <Compile Include="Assets\Scripts\BoxmenuScript.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\ChangeStats.cs" />
-    <Compile Include="Assets\Scripts\ChaseEnemySword.cs" />
-    <Compile Include="Assets\Scripts\ChasePlayer.cs" />
-    <Compile Include="Assets\Scripts\EnemySword.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\AOEdamage.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\BombEnemyPlayerDetector.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\ChaseEnemySword.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\ChasePlayer.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemySword.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Explosion.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\GunEnemyScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\ObjectHealth.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\TurnTowardsPlayer.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\WaterballScript.cs" />
     <Compile Include="Assets\Scripts\GameMusic.cs" />
-    <Compile Include="Assets\Scripts\GunEnemyScript.cs" />
     <Compile Include="Assets\Scripts\HealthAndPoints.cs" />
     <Compile Include="Assets\Scripts\HUDScript.cs" />
     <Compile Include="Assets\Scripts\LevelRandomizer.cs" />
@@ -315,13 +321,13 @@
     <Compile Include="Assets\Scripts\Map\CreateLevelFromMap.cs" />
     <Compile Include="Assets\Scripts\Map\DrawMap.cs" />
     <Compile Include="Assets\Scripts\Map\GenMap.cs" />
+    <Compile Include="Assets\Scripts\Map\LevelboundsTagger.cs" />
     <Compile Include="Assets\Scripts\Map\LocationOnMap.cs" />
     <Compile Include="Assets\Scripts\Map\Map.cs" />
     <Compile Include="Assets\Scripts\Map\old.cs" />
     <Compile Include="Assets\Scripts\Map\RoomChange.cs" />
     <Compile Include="Assets\Scripts\Map\TestRuntimeSceneCreation.cs" />
     <Compile Include="Assets\Scripts\MaxEnemies.cs" />
-    <Compile Include="Assets\Scripts\ObjectHealth.cs" />
     <Compile Include="Assets\Scripts\OnDeath.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -339,10 +345,8 @@
     <Compile Include="Assets\Scripts\SkillScripts\SkillMist.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Skills.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\TestFireball.cs" />
-    <Compile Include="Assets\Scripts\StationaryEnemy.cs" />
     <Compile Include="Assets\Scripts\SwordAttack.cs" />
     <Compile Include="Assets\Scripts\testSkillSwap.cs" />
-    <Compile Include="Assets\Scripts\WaterballScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

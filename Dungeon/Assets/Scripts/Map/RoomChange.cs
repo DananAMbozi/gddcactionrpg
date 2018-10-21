@@ -10,17 +10,19 @@ public class RoomChange : MonoBehaviour
     private Vector3 playerPos;
     public Vector3 change;
     private GameObject player;
+    private GameObject cam;
     private int distance;
     private bool passed = false; //player seems to be triggering collision multiple times
 
     void OnEnable()
-    {   
+    {
         //how far to teleport player
         distance = PlayerStats.distanceBtwnRooms;
         if (distance == 0)
         {
             distance = 90; //default
         }
+        cam = GameObject.Find("Main Camera");
         player = GameObject.Find("Player");
         //playerPos = player.GetComponent<LocationOnMap>().GetLocation(); //x,y pos on map
     }
@@ -28,10 +30,12 @@ public class RoomChange : MonoBehaviour
     {
         if (other.CompareTag("Player") && !passed)
         {
-        //player.GetComponent<LocationOnMap>().UpdateLocation(change); //updates x,y pos on map
-        //playerPos = player.GetComponent<LocationOnMap>().GetLocation(); //gets new x,y pos on map
-        player.transform.position += distance * change; //moves physical location in gamespace
-        passed = true;
+            //player.GetComponent<LocationOnMap>().UpdateLocation(change); //updates x,y pos on map
+            //playerPos = player.GetComponent<LocationOnMap>().GetLocation(); //gets new x,y pos on map
+            cam.GetComponent<Camera>().center += 100 * new Vector3(Mathf.RoundToInt(change.x), Mathf.RoundToInt(change.y), 0);
+            cam.transform.position += 100 * new Vector3(Mathf.RoundToInt(change.x), Mathf.RoundToInt(change.y), 0);
+            player.transform.position += distance * change; //moves physical location in gamespace
+            passed = true;
         }
     }
     void Update()
