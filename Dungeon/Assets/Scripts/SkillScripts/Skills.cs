@@ -15,6 +15,7 @@ public abstract class Skills : MonoBehaviour{
     protected float power;  //Power of the skill, whether it's dmg or healing (1.00 = 100%)
     protected float speed; //Movespeed of attack (750 for fireball, 0 for mine)
     protected bool activeSkill = true;  //Whether the skill is active or passive
+   // public GameObject caster = null;
 
     public float GetSkillCooldown()
     {
@@ -58,8 +59,16 @@ public abstract class Skills : MonoBehaviour{
             power = 0;
     }
 
+
     //All inherited classes will need to define what their activated effect is.
     public abstract void Activate();
+
+    //Same as above, if angles are needed
+    public virtual void Activate(Vector3 direction)
+    {
+        Activate();
+        return;
+    }
 
     //All inherited classes will need to write their own skill description.
     public abstract string SkillDescription();
