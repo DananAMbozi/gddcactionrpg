@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\GunEnemyScript.cs" />
     <Compile Include="Assets\Scripts\HealthAndPoints.cs" />
     <Compile Include="Assets\Scripts\HUDScript.cs" />
+    <Compile Include="Assets\Scripts\KeyConfig.cs" />
     <Compile Include="Assets\Scripts\LevelRandomizer.cs" />
     <Compile Include="Assets\Scripts\LoadLevel.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />

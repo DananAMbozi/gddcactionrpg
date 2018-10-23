@@ -21,8 +21,27 @@ public class TestFireball : Skills {
         skillCooldown -= 1 * Time.deltaTime;
 	}
 
+    public override void Activate(Vector3 direction)
+    {
+        if (skillCooldown <= 0)
+        {
+            //Initiate cooldown
+            skillCooldown = maxSkillCooldown;
+
+            float tempAngle = Mathf.Rad2Deg * Mathf.Atan2(direction.x, direction.y);
+
+            //Create fireball
+            GameObject newRAttack = Instantiate(fireball, transform.position, Quaternion.AngleAxis(tempAngle, Vector3.back));
+
+            // Had to replace AddRelativeForce with AddForce due to problems with Quaternion.rotation on instantiation
+            newRAttack.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * direction.x, speed * direction.y));
+            newRAttack.GetComponent<PlayerAttack>().damage = (int)power;
+        }
+    }
+
     public override void Activate()
     {
+        /*
         if (skillCooldown <= 0)
         {
             //Initiate cooldown
@@ -30,10 +49,12 @@ public class TestFireball : Skills {
 
             //Create fireball
             GameObject newRAttack = Instantiate(fireball, transform.position, transform.rotation);
+
+            // Had to replace AddRelativeForce with AddForce due to problems with Quaternion.rotation on instantiation
             newRAttack.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, speed));
-            Debug.Log(power);
             newRAttack.GetComponent<PlayerAttack>().damage = (int)power;
-        }
+        }*/
+        return;
     }
 
     public override void DestroySkill()

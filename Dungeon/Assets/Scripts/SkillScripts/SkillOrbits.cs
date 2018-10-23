@@ -41,7 +41,7 @@ public abstract class SkillOrbits : Skills {
                             float posY = positionOffset.y * Mathf.Cos(angle) - positionOffset.x * Mathf.Sin(angle);
                             orbitTracker[i].transform.position = new Vector3(posX + gameObject.transform.position.x, posY + gameObject.transform.position.y, 0f);
                         }
-                        else // If the shield to be replaced is in the 0th position, need to check if an orbit exists first
+                        else if (orbits > 1)// If the shield to be replaced is in the 0th position, need to check if an orbit exists first
                         {
                             bool referenceFound = false;    // If there exists an orbit, referenceFound = true;
                             int counter = orbitTracker.Length - 1;  // Count backwards from maxOrbits to 1
