@@ -10,8 +10,9 @@ public class SkillHaste : Skills
      */
     private float maxBuffTimer = 1f;
 
-    void Start()
+    void Awake()
     {
+        skillImage = Resources.Load("Art/HasteIcon", typeof(Sprite)) as Sprite;
         activeSkill = true;
         maxSkillCooldown = 5f;
         power = 0.5f;

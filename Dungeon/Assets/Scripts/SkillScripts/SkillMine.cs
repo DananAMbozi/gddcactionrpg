@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SkillMine : Skills
 {
-
     public GameObject mine;
 
-    void Start()
+    void Awake()
     {
+        skillImage = Resources.Load("Art/MineIcon", typeof(Sprite)) as Sprite;
         activeSkill = true; //This is an active skill
         maxSkillCooldown = 0.5f;
         mine = (GameObject)Resources.Load("Mine");
