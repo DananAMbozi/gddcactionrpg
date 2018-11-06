@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxSpeed: 4
   roomSize: 25
+  autochase: 1
 --- !u!114 &114430976618994692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5317f74833d5c4f96dc48e25e5de93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: 1
   damage: 1
 --- !u!114 &114797432147294406
 MonoBehaviour:
@@ -258,7 +260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: b4a6372283b7f344c8a34a897791a780, type: 3}
+  m_Sprite: {fileID: 21300002, guid: b4a6372283b7f344c8a34a897791a780, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

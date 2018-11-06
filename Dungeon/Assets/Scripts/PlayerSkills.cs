@@ -51,7 +51,7 @@ public class PlayerSkills : MonoBehaviour
         {
             cd -= Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.Z) && Mcd <= 0)
+        if (Input.GetKeyDown(KeyCode.RightControl) && Mcd <= 0)
         {
             //sword.GetComponent<SwordAttack2>().MAttack();
             MAttack();

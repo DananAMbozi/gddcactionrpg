@@ -7,10 +7,13 @@ public class GunEnemyScript : MonoBehaviour {
     private GameObject player;
     private Rigidbody2D box;
     public int roomSize = 25;
+    float cooldown = 1;
+    float cooldownElapsed;
 
     void Awake () {
         box = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
+        cooldownElapsed = -1.5f;
     }
 
     void Update () {
@@ -29,9 +32,6 @@ public class GunEnemyScript : MonoBehaviour {
         }
 
     }
-
-    double cooldown = 1;
-    double cooldownElapsed = 1;
 
     public GameObject Waterball;
 
