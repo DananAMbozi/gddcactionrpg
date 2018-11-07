@@ -19,7 +19,7 @@ public class PlayerSkillSet : MonoBehaviour
     void Start()
     {
         skillUI = gameObject.AddComponent<DisplaySkillStatus>();//new DisplaySkillStatus();
-        skillUI.Init(gameObject);
+        skillUI.Init();
 
 //        basicAttack = (GameObject)Resources.Load("Fireball");
 
