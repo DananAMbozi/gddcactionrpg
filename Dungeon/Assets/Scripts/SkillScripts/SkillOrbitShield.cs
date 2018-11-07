@@ -5,7 +5,8 @@ using UnityEngine;
 public class SkillOrbitShield : SkillOrbits {
 
     // Use this for initialization
-    void Start () {
+    void Awake()
+    {
         activeSkill = false;    // This is a PASSIVE SKILL
         maxSkillCooldown = 3f;  // 3 seconds (temporary)
         skillCooldown = maxSkillCooldown;

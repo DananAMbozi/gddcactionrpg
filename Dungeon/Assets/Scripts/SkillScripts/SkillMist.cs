@@ -13,7 +13,9 @@ public class SkillMist : Skills {
     //private SpriteRenderer targetCharacter;
 
 	// Use this for initialization
-	void Start () {
+	void Awake()
+    {
+        skillImage = Resources.Load("Art/MistIcon", typeof(Sprite)) as Sprite;
         activeSkill = true;
         maxSkillCooldown = 8f;
         power = 0f;

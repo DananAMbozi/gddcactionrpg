@@ -6,16 +6,22 @@ public class PlayerSkillSet : MonoBehaviour
 {
 
     private Dictionary<KeyCode, Skills> key2skill = new Dictionary<KeyCode, Skills>();
+    private Skills[] equippedSkills = new Skills[4];
 //    private KeyCode[] keyCodes = new KeyCode[3];
 //    private Skills[] skills = new Skills[4];
-    private GameObject basicAttack;
+//    private GameObject basicAttack;
     private Skills basicAttackSkill;
     private int offsetAngle = 90;    // Used to offset angles
     public Vector3 aimDirection;
 
+    private DisplaySkillStatus skillUI;
+
     void Start()
     {
-        basicAttack = (GameObject)Resources.Load("Fireball");
+        skillUI = gameObject.AddComponent<DisplaySkillStatus>();//new DisplaySkillStatus();
+        skillUI.Init();
+
+//        basicAttack = (GameObject)Resources.Load("Fireball");
 
         /*
         // Use getaxis instead of keycode
@@ -28,10 +34,12 @@ public class PlayerSkillSet : MonoBehaviour
         skills[2] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMIST);
         skills[3] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SHIELD);*/
 
-        key2skill.Add(KeyCode.Space, SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMINE));
-        key2skill.Add(KeyCode.LeftShift, SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLHASTE));
-        key2skill.Add(KeyCode.E, SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMIST));
-        SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SHIELD);
+        key2skill.Add(KeyCode.Space, equippedSkills[0] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMINE));
+        key2skill.Add(KeyCode.LeftShift, equippedSkills[1] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLHASTE));
+        key2skill.Add(KeyCode.E, equippedSkills[2] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMIST));
+        equippedSkills[3] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SHIELD);
+
+        skillUI.EquipSkill(key2skill);
 
         basicAttackSkill = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.TESTFIREBALL);
     }
@@ -46,14 +54,22 @@ public class PlayerSkillSet : MonoBehaviour
                 skills[i].Activate();
             i = keyCodes.Length;
         }*/
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-            key2skill[KeyCode.Space].Activate(new Vector3(Mathf.Cos(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), Mathf.Sin(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), 0f));
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-            key2skill[KeyCode.LeftShift].Activate(new Vector3(Mathf.Cos(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), Mathf.Sin(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), 0f));
-        else if (Input.GetKeyDown(KeyCode.E))
-            key2skill[KeyCode.E].Activate(new Vector3(Mathf.Cos(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), Mathf.Sin(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), 0f));
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            key2skill[KeyCode.Space].Activate(new Vector3(Mathf.Cos(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), Mathf.Sin(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), 0f));
+            skillUI.skillCooldown();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            key2skill[KeyCode.LeftShift].Activate(new Vector3(Mathf.Cos(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), Mathf.Sin(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), 0f));
+            skillUI.skillCooldown();
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            key2skill[KeyCode.E].Activate(new Vector3(Mathf.Cos(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), Mathf.Sin(Mathf.Deg2Rad * (transform.rotation.eulerAngles.z + offsetAngle)), 0f));
+            skillUI.skillCooldown();
+        }
         aimDirection = new Vector3(Input.GetAxisRaw("FireHorizontal"), Input.GetAxisRaw("FireVertical"), 0f);
 
         if (aimDirection != Vector3.zero)
@@ -72,6 +88,12 @@ public class PlayerSkillSet : MonoBehaviour
         {
             key2skill[key] = SkillAssigner.AssignSkill(gameObject, skill);
         }
+        skillUI.EquipSkill(key2skill);
+    }
+
+    public Dictionary<KeyCode, Skills> SkillEquips()
+    {
+        return key2skill;
     }
 /*
     public void SetKeys(KeyCode[] keys)

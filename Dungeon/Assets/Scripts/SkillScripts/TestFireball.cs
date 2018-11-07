@@ -8,7 +8,8 @@ public class TestFireball : Skills {
     public GameObject fireball; //Used to create the fireball prefab
 
     // Use this for initialization
-    void Start () {
+    void Awake()
+    {
         activeSkill = true; //This is an active skill
         maxSkillCooldown = 0.5f;
         fireball = (GameObject)Resources.Load("Fireball");
