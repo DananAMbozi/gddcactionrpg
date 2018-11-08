@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\BoxmenuScript.cs" />
      <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\ChangeStats.cs" />
+     <Compile Include="Assets\Scripts\DoorLocks.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\AOEdamage.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\BombEnemyPlayerDetector.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\ChaseEnemySword.cs" />

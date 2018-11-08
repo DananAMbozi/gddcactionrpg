@@ -29,7 +29,7 @@ public class CreateLevelFromMap : MonoBehaviour
             GameObject newWalls = Instantiate(walls[r.type], transform.position, Quaternion.identity); 
             GameObject bounds = Instantiate(dynamicLevelBounds, transform.position, Quaternion.identity);
         }
-        
+
         GameObject.Find("Player").transform.position = distanceBetweenRooms * new Vector3((PlayerStats.numRooms + 1), (PlayerStats.numRooms + 1), 0);
     }
 }

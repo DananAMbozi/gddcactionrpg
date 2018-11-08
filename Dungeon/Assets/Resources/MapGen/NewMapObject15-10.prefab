@@ -148,6 +148,7 @@ MonoBehaviour:
   - {fileID: 1958925061924126, guid: 1b5caa01d7be65e4baa6ab9c29b89569, type: 2}
   dynamicLevelBounds: {fileID: 1311507735238700, guid: 8d5500b8783055649bf563cb919c145e,
     type: 2}
+  doors: {fileID: 1782130586220642, guid: 1213c63f26258c14b8fff52b7158bfbe, type: 2}
 --- !u!212 &212599066376569964
 SpriteRenderer:
   m_ObjectHideFlags: 1
