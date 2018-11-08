@@ -32,6 +32,11 @@ public class EnemySword : MonoBehaviour
         windup += Time.deltaTime;
         if (windup >= 0)
         {
+            if (gameObject.GetComponent<BoxCollider2D>() == null)
+            {
+                gameObject.AddComponent<BoxCollider2D>();
+            }
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             swingDeg += Time.deltaTime * swingSpeed;
             directionV = directionV + self.transform.position;
             Vector3 newPosition = self.position;
@@ -70,7 +75,7 @@ public class EnemySword : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !hit && windup > 0)
+        if (other.CompareTag("Player") && !hit)
         {
             other.SendMessage("TakeDamage", sDmg, SendMessageOptions.DontRequireReceiver); //for some reason sends damage from stationary enemy script
             hit = true;

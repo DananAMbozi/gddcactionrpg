@@ -21,7 +21,7 @@ public class ChaseEnemySword : MonoBehaviour
         coolDownCounter -= Time.deltaTime;
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && coolDownCounter <= 0)
         {

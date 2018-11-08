@@ -200,6 +200,7 @@ MonoBehaviour:
   health: 20
   reward: 10
   isEnemy: 1
+  isDead: 0
 --- !u!114 &114776795036908192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 1
-  damage: 1
+  damage: 0
 --- !u!114 &114797432147294406
 MonoBehaviour:
   m_ObjectHideFlags: 1
