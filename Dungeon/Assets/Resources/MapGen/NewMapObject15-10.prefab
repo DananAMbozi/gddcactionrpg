@@ -129,24 +129,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walls:
-  - {fileID: 1661937562225136, guid: 4b8d918093c23d4498b1d3f9e2612e49, type: 2}
-  - {fileID: 1661937562225136, guid: 4b8d918093c23d4498b1d3f9e2612e49, type: 2}
-  - {fileID: 1661937562225136, guid: 4b8d918093c23d4498b1d3f9e2612e49, type: 2}
-  - {fileID: 1141045390321376, guid: c035d6bffe815de4697940a67bb10a10, type: 2}
-  - {fileID: 1552749705058790, guid: 4f91e7cdefa69bf4f93e78accb512535, type: 2}
-  - {fileID: 1255652350868300, guid: 8c71057883d6f3848ace8ad4545aac25, type: 2}
-  - {fileID: 1112152425378028, guid: 14b3bb87e104e2545ac9897fd6994a38, type: 2}
-  - {fileID: 1189726796493260, guid: cf7e8f182753b554a8b8023e58d46a82, type: 2}
-  - {fileID: 1525626336062384, guid: af7e826a014d0e44bae3b2b119c1bc3b, type: 2}
-  - {fileID: 1172382568794762, guid: 13300467c15777a47a1591d4e647069e, type: 2}
-  - {fileID: 1849443698211848, guid: e42e1fd72ee41a2409048c2a1b443cfd, type: 2}
-  - {fileID: 1808985337965844, guid: a72255f9df637c248888273f4dc1cb2d, type: 2}
-  - {fileID: 1769805365622710, guid: e9b10c2668ca8c34f8917df4140a7120, type: 2}
-  - {fileID: 1421144524426642, guid: b3b23c7345dfa95408d9ea2d0afd2463, type: 2}
-  - {fileID: 1858581922328114, guid: 395baf105bdd13e4aa6fc2f8d164255e, type: 2}
-  - {fileID: 1365966414273206, guid: 0a93727863472d5469f9b15f26ab1080, type: 2}
-  - {fileID: 1516852228241874, guid: 401e8ab0aa0f92748a94b9d435ed08a2, type: 2}
-  dynamicLevelBounds: {fileID: 1700756912369258, guid: 75e21746194ef284f9064da8781a66ca,
+  - {fileID: 1062878364840700, guid: f5179c5fdc99ffb4dad0488816761445, type: 2}
+  - {fileID: 1062878364840700, guid: f5179c5fdc99ffb4dad0488816761445, type: 2}
+  - {fileID: 1062878364840700, guid: f5179c5fdc99ffb4dad0488816761445, type: 2}
+  - {fileID: 1237446837240876, guid: cd231315249de0b44a5a730c8cc2f180, type: 2}
+  - {fileID: 1519837064991272, guid: fe684a96f9de84c49af5b826303d868d, type: 2}
+  - {fileID: 1824510250668606, guid: c91a6ea8e65a39045a8e327b6722dbe7, type: 2}
+  - {fileID: 1170805254478412, guid: 224186a9b9753e9468ad84b838b2b26b, type: 2}
+  - {fileID: 1969423327082308, guid: 4364c35a2609e224881fcebcc7d74844, type: 2}
+  - {fileID: 1022159438625524, guid: dea09372ecf6b7840afcdc2180aae320, type: 2}
+  - {fileID: 1348696019976486, guid: ca7648a69fb0f834c9d73ef4f40d7fa2, type: 2}
+  - {fileID: 1546419050984656, guid: 1b0a8d2125389ea4aa84d2c99101876e, type: 2}
+  - {fileID: 1859111023165416, guid: 34be6eb057c217c44b02f625bfa6d913, type: 2}
+  - {fileID: 1506850500374074, guid: eee3895f41ffe944dbe2b0765709ea6c, type: 2}
+  - {fileID: 1982949497899532, guid: cd6dd4cd8f423d34581ca1fb1a6e89ca, type: 2}
+  - {fileID: 1229707896185614, guid: b59ac83af0f5bae4d89a6621bd4605f2, type: 2}
+  - {fileID: 1627860911489874, guid: 745b255f1aa13f94bb7bbf8e47cc5fb1, type: 2}
+  - {fileID: 1958925061924126, guid: 1b5caa01d7be65e4baa6ab9c29b89569, type: 2}
+  dynamicLevelBounds: {fileID: 1311507735238700, guid: 8d5500b8783055649bf563cb919c145e,
     type: 2}
 --- !u!212 &212599066376569964
 SpriteRenderer:

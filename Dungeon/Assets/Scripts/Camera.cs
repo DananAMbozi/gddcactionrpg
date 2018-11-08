@@ -16,7 +16,7 @@ public class Camera : MonoBehaviour
 
     void Start()
     {
-        center = new Vector3(0f, 0f, 50f);//new Vector3(5100, 5100, -10);
+        center = new Vector3(5100, 5100, -10);
         if (follow)
         {
             player = GameObject.Find("Player");

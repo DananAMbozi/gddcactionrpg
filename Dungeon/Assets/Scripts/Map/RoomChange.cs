@@ -16,6 +16,7 @@ public class RoomChange : MonoBehaviour
 
     void OnEnable()
     {
+        //0711 horizontaltp not synced after room resize
         //how far to teleport player
         distance = PlayerStats.distanceBtwnRooms;
         if (distance == 0)

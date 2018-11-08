@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114033921631790048}
   - component: {fileID: 114525430793293800}
   m_Layer: 0
-  m_Name: MapSpot
+  m_Name: oldMapSpot0711
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
