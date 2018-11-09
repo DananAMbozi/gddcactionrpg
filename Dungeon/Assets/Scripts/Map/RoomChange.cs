@@ -33,7 +33,7 @@ public class RoomChange : MonoBehaviour
         {
             //player.GetComponent<LocationOnMap>().UpdateLocation(change); //updates x,y pos on map
             //playerPos = player.GetComponent<LocationOnMap>().GetLocation(); //gets new x,y pos on map
-            cam.GetComponent<Camera>().center += 100 * new Vector3(Mathf.RoundToInt(change.x), Mathf.RoundToInt(change.y), 0);
+            cam.GetComponent<CameraScript>().center += 100 * new Vector3(Mathf.RoundToInt(change.x), Mathf.RoundToInt(change.y), 0);
             cam.transform.position += 100 * new Vector3(Mathf.RoundToInt(change.x), Mathf.RoundToInt(change.y), 0);
             player.transform.position += distance * change; //moves physical location in gamespace
             passed = true;

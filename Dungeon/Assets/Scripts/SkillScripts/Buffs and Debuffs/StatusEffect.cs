@@ -8,6 +8,7 @@ public abstract class StatusEffect : MonoBehaviour {
     protected float buffTimer;    // Duration of the effect.
     protected float maxBuffTimer;
     protected bool dispellable; // If the effect can be dispelled or not in-game.
+    protected bool buff = true; // Whether buff or debuff
 
     protected string buffName;  // Name of the buff.
 

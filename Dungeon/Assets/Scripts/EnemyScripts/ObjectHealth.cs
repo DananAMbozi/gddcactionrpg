@@ -33,10 +33,10 @@ public class ObjectHealth : MonoBehaviour
             isDead = true;
             GameObject.Find("Player").GetComponent<PlayerHealth>().ChangePoints(reward);
             Destroy(gameObject);
-            if (isEnemy)
-            {
-                transform.parent.GetChild(2).GetComponent<DoorLocks>().EnemyDied();
-            }
+      //      if (isEnemy)
+     //       {
+      //          transform.parent.GetChild(2).GetComponent<DoorLocks>().EnemyDied();
+        //    }
         }
     }
 

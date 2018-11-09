@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
 
     public static bool CameraExists;
@@ -17,6 +17,7 @@ public class Camera : MonoBehaviour
     void Start()
     {
         center = new Vector3(5100, 5100, -10);
+        center = new Vector3(0f, 0f, 0f);
         if (follow)
         {
             player = GameObject.Find("Player");

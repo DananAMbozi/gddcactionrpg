@@ -34,6 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4002605421516138}
+  - component: {fileID: 114049325946730496}
   m_Layer: 0
   m_Name: StartPoints
   m_TagString: Untagged
@@ -438,6 +439,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &114049325946730496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1161057355340660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8d91bbf3a7e9344adc58d59a11929e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numEnemiesInRoom: 0
+  doors: []
 --- !u!114 &114194626786794344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -506,3 +520,8 @@ MonoBehaviour:
   shootEn: {fileID: 4195686451256164, guid: 9e83cc2736f9d6d4994ed49db4350364, type: 2}
   followEn: {fileID: 4422771078236654, guid: 258e410a24b177d4f84ebdef5e11f4aa, type: 2}
   explodeEn: {fileID: 4422771078236654, guid: 6f4cd6ddde348c34aa3e71f2021cfea9, type: 2}
+  minX: -8.5
+  maxX: 8.5
+  minY: -3
+  maxY: 3
+  numEnemies: 0
