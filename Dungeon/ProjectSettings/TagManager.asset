@@ -15,6 +15,12 @@ TagManager:
   - Levelbounds
   - Door
   - DoorsObject
+  - Top
+  - Left
+  - Right
+  - Bot
+  - Level
+  - SnowEmitter
   layers:
   - Default
   - TransparentFX
