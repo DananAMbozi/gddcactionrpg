@@ -34,7 +34,7 @@ public class BuffInvincible : StatusEffect {
     public override void Activate()
     {
         transform.tag = "Invincible";
-        targetCharacter.color = new Color(1f, 1f, 1f, 0.3f);    //Make the character translucent
+        targetCharacter.color = new Color(targetCharacter.color.r, targetCharacter.color.g, targetCharacter.color.b, targetCharacter.color.a - 0.7f);    //Make the character translucent
     }
 
     public override string buffDescription()
@@ -45,7 +45,7 @@ public class BuffInvincible : StatusEffect {
     public override void buffDestroy()
     {
         gameObject.transform.tag = originalTag;
-        targetCharacter.color = new Color(1f, 1f, 1f, 1f);  //Return the character back to normal form
+        targetCharacter.color = new Color(targetCharacter.color.r, targetCharacter.color.g, targetCharacter.color.b, targetCharacter.color.a + 0.7f);  //Return the character back to normal form
         Destroy(this);
     }
 
