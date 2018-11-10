@@ -11,7 +11,7 @@ public class SnowEmitter : MonoBehaviour {
 
     bool init = false;
     int numParticles = 5;
-    int maxParticles = 150;
+    int maxParticles = 100;
     float alpha;
 
 	// Use this for initialization
@@ -26,7 +26,11 @@ public class SnowEmitter : MonoBehaviour {
 
         snowEmitterClone.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + Camera.main.orthographicSize * 2, 0f);
         snowEmitterClone.transform.SetParent(Camera.main.transform, true);
-	}
+
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(blankScreenClone);
+        DontDestroyOnLoad(snowEmitterClone);
+    }
 
     public void AddSnow(int addParticles)
     {

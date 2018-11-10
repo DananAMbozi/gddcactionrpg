@@ -6,9 +6,14 @@ public class BuffSpeedUp : StatusEffect
 {
 
     private SpriteRenderer playerSprite;
+    private Color changeColour;
     private PlayerMovement playerMovement;
     private float speedBoost = 0.2f;
 
+    private void Awake()
+    {
+        changeColour = new Color(0f, -0.2f, -0.2f, 0f);
+    }
 
     void Update()
     {
@@ -37,7 +42,7 @@ public class BuffSpeedUp : StatusEffect
     public override void Activate()
     {
         playerMovement.speed += speedBoost;
-        playerSprite.color = new Color(1f, 0.8f, 0.8f, 1f);
+        playerSprite.color += changeColour;//+= new Color(1f, 0.8f, 0.8f, 1f);
     }
 
     public override string buffDescription()
@@ -47,7 +52,7 @@ public class BuffSpeedUp : StatusEffect
 
     public override void buffDestroy()
     {
-        playerSprite.color = new Color(1f, 1f, 1f, 1f);
+        playerSprite.color -= changeColour;//new Color(1f, 1f, 1f, 1f);
         playerMovement.speed -= speedBoost;
         Destroy(this);
     }

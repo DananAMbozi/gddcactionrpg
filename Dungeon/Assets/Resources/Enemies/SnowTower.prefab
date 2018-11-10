@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50942810169763462}
   - component: {fileID: 61293977117579822}
   - component: {fileID: 114909331566200130}
+  - component: {fileID: 114911868683010592}
   m_Layer: 0
   m_Name: SnowTower
   m_TagString: Enemy
@@ -118,10 +119,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdf68cb44cf58342837cebd759bfcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 30
   reward: 1
   isEnemy: 1
   isDead: 0
+--- !u!114 &114911868683010592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921873597727896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9236f78dd70d54e85c92e37d76d7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212586927338195358
 SpriteRenderer:
   m_ObjectHideFlags: 1
