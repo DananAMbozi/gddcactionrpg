@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4262989099165326, guid: 734d13c30d4f8094a84c868ebe9a853b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.89
       objectReference: {fileID: 0}
     - target: {fileID: 4262989099165326, guid: 734d13c30d4f8094a84c868ebe9a853b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -242,7 +242,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1033313696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.86}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -257,10 +257,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1194861432}
   - component: {fileID: 1194861431}
+  - component: {fileID: 1194861434}
+  - component: {fileID: 1194861433}
   - component: {fileID: 1194861430}
+  - component: {fileID: 1194861435}
+  - component: {fileID: 1194861436}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,9 +277,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194861429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a07d3e6ef7cebd74185c21897a0a512a, type: 3}
+  m_Script: {fileID: 11500000, guid: e84fa6336489dcf4db12f7ecb1be5cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 2
+  shootEn: {fileID: 4195686451256164, guid: 9e83cc2736f9d6d4994ed49db4350364, type: 2}
+  minX: -8.5
+  maxX: 8.5
+  minY: -3
+  maxY: 3
 --- !u!212 &1194861431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -329,12 +339,85 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194861429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.85, y: 1.77, z: -0.06}
+  m_LocalPosition: {x: 0, y: 4, z: -0.06}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1194861433
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1194861429}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.97}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.43, y: 12.77}
+    newSize: {x: 10.43, y: 12.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.89, y: 9.01}
+  m_EdgeRadius: 0
+--- !u!50 &1194861434
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1194861429}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1194861435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1194861429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdf68cb44cf58342837cebd759bfcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  reward: 1000
+  isEnemy: 0
+--- !u!114 &1194861436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1194861429}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc5b1c892c9b9940a4989c9a0b15f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxSpeed: 1
+  roomSize: 25
+  autochase: 1
 --- !u!1 &1565411345
 GameObject:
   m_ObjectHideFlags: 0
