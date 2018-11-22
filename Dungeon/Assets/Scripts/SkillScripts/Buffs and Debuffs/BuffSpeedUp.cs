@@ -30,6 +30,7 @@ public class BuffSpeedUp : StatusEffect
 
     public override void Init()
     {
+        buffName = "Haste";
         dispellable = true;
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
@@ -54,12 +55,16 @@ public class BuffSpeedUp : StatusEffect
     {
         playerSprite.color -= changeColour;//new Color(1f, 1f, 1f, 1f);
         playerMovement.speed -= speedBoost;
+        gameObject.GetComponent<BuffHandler>().RemoveBuff(this);
         Destroy(this);
     }
 
-    public override void Stack()
+    public override void Stack(StatusEffect sameEffect)
     {
-        //Currently unused
         buffTimer = maxBuffTimer;
+    }
+
+    public override void TransferBuff(GameObject target)
+    {
     }
 }

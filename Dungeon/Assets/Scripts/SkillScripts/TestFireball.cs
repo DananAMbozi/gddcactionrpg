@@ -19,7 +19,7 @@ public class TestFireball : Skills {
 	
 	// Update is called once per frame
 	void Update () {
-        skillCooldown -= 1 * Time.deltaTime;
+        skillCooldown -= Time.deltaTime;
 	}
 
     public override void Activate(Vector3 direction)
@@ -33,6 +33,9 @@ public class TestFireball : Skills {
 
             //Create fireball
             GameObject newRAttack = Instantiate(fireball, transform.position, Quaternion.AngleAxis(tempAngle, Vector3.back));
+
+            newRAttack.AddComponent<BuffHandler>();
+            gameObject.GetComponent<BuffHandler>().TransferBuffs(newRAttack);
 
             // Had to replace AddRelativeForce with AddForce due to problems with Quaternion.rotation on instantiation
             newRAttack.GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * direction.x, speed * direction.y));

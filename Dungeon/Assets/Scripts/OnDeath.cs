@@ -26,6 +26,11 @@ public class OnDeath : MonoBehaviour
         if (options == Options.Spawn && isDead)
         {
             GameObject spawnObj = Instantiate(toSpawn, transform.position, new Quaternion(0, 0, 0, 0));
+
+            spawnObj.AddComponent<BuffHandler>();
+            if (gameObject.GetComponent<BuffHandler>() != null)
+                gameObject.GetComponent<BuffHandler>().TransferBuffs(spawnObj);
+
             Destroy(gameObject);
         }
         else if (isDead)

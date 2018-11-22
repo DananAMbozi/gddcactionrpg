@@ -7,7 +7,7 @@
  * */
 public static class SkillAssigner
 {
-    public enum SkillNames { TESTFIREBALL, SKILLMIST, SKILLHASTE, SKILLMINE, SHIELD };
+    public enum SkillNames { TESTFIREBALL, SKILLMIST, SKILLHASTE, SKILLMINE, SHIELD, TIMESLOW };
 
     /*
      * Attaches skill script corresponding to int skillID onto the character equipping the skill.
@@ -32,6 +32,8 @@ public static class SkillAssigner
                 return character.AddComponent<SkillMine>();
             case SkillNames.SHIELD:
                 return character.AddComponent<SkillOrbitShield>();
+            case SkillNames.TIMESLOW:
+                return character.AddComponent<SkillTimeSlow>();
             default:
                 return null;
         }

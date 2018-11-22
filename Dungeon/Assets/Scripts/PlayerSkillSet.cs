@@ -36,7 +36,9 @@ public class PlayerSkillSet : MonoBehaviour
 
         key2skill.Add(KeyCode.Space, equippedSkills[0] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMINE));
         key2skill.Add(KeyCode.LeftShift, equippedSkills[1] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLHASTE));
-        key2skill.Add(KeyCode.E, equippedSkills[2] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMIST));
+        //key2skill.Add(KeyCode.E, equippedSkills[2] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SKILLMIST));
+        key2skill.Add(KeyCode.E, equippedSkills[2] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.TIMESLOW));
+
         equippedSkills[3] = SkillAssigner.AssignSkill(gameObject, SkillAssigner.SkillNames.SHIELD);
 
         skillUI.EquipSkill(key2skill);

@@ -27,6 +27,9 @@ public class SkillMine : Skills
         {
             skillCooldown = maxSkillCooldown;
             GameObject newRAttack = Instantiate(mine, transform.position, new Quaternion(0,0,0,0));
+
+            newRAttack.AddComponent<BuffHandler>();
+            gameObject.GetComponent<BuffHandler>().TransferBuffs(newRAttack);
         }
     }
 
