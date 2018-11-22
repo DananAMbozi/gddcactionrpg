@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectHealth : MonoBehaviour
 {
     SpriteRenderer damageIndicator;
+    Color damageColour;
     private float damageCooldown = 0.1f;
     private bool damaged = false;
     public int health = 10;
@@ -15,6 +16,8 @@ public class ObjectHealth : MonoBehaviour
     private void Awake()
     {
         damageIndicator = gameObject.GetComponent<SpriteRenderer>();
+        if((gameObject.tag ==  "Enemy") || (gameObject.tag == "Boss") || (gameObject.tag == "GunEnemy"))
+            gameObject.AddComponent<BuffHandler>();
     }
 
     private void Update()
@@ -25,7 +28,7 @@ public class ObjectHealth : MonoBehaviour
             if (damageCooldown <= 0)
             {
                 damaged = false;
-                damageIndicator.color = new Color(1, 1, 1);
+                damageIndicator.color -= damageColour;
             }
         }
     }
@@ -51,7 +54,8 @@ public class ObjectHealth : MonoBehaviour
 
         if (damage != 0)
         {
-            damageIndicator.color = new Color(Mathf.Sign(damage), -Mathf.Sign(damage), 0f);
+            damageColour = new Color(Mathf.Sign(damage), -Mathf.Sign(damage), -1f, 0f);
+            damageIndicator.color += damageColour;
             damaged = true;
             damageCooldown = 0.1f;
         }
@@ -66,5 +70,4 @@ public class ObjectHealth : MonoBehaviour
         //    }
         }
     }
-
 }

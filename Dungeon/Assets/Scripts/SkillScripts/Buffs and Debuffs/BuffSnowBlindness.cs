@@ -20,7 +20,7 @@ public class BuffSnowBlindness : StatusEffect {
 
     public override string buffDescription()
     {
-        return "It falls harder here.";
+        return buffName + ": It seems to fall harder here";
     }
 
     public override void buffDestroy()
@@ -28,14 +28,15 @@ public class BuffSnowBlindness : StatusEffect {
         if (snowEmitter != null)
             snowEmitter.GetComponent<SnowEmitter>().AddSnow(-snowAmount);
 
+        gameObject.GetComponent<BuffHandler>().RemoveBuff(this);
         Destroy(this);
     }
 
     public override void Init()
     {
+        stackable = true;
         maxBuffTimer = 10f;
         buffTimer = maxBuffTimer;
-        dispellable = true;
         buff = false;
         buffName = "Snow Blindness";
         snowAmount = Random.Range(10, 25);
@@ -46,7 +47,11 @@ public class BuffSnowBlindness : StatusEffect {
         Activate();
     }
 
-    public override void Stack()
+    public override void Stack(StatusEffect sameEffect)
+    {
+    }
+
+    public override void TransferBuff(GameObject target)
     {
     }
 }

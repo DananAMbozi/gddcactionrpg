@@ -7,8 +7,10 @@ public class GunEnemyScript : MonoBehaviour {
     private GameObject player;
     private Rigidbody2D box;
     public int roomSize = 25;
-    float cooldown = 1;
+    float cooldown = 1f;
     float cooldownElapsed;
+
+    GameObject newRAttack;
 
     void Awake () {
         box = GetComponent<Rigidbody2D>();
@@ -17,20 +19,22 @@ public class GunEnemyScript : MonoBehaviour {
     }
 
     void Update () {
-        Vector2 playerPos = player.GetComponent<Rigidbody2D>().position;
-        Vector2 boxPos = box.position;
-        Vector2 displacement = playerPos - boxPos;
-        if (displacement.magnitude < roomSize)
+        if (player.tag == "Player")
         {
-            cooldownElapsed += Time.deltaTime;
-        if (cooldownElapsed >= cooldown)
-        {
-            cooldownElapsed = 0;
-            Attack(speed);
-        }
+            Vector2 playerPos = player.GetComponent<Rigidbody2D>().position;
+            Vector2 boxPos = box.position;
+            Vector2 displacement = playerPos - boxPos;
+            if (displacement.magnitude < roomSize)
+            {
+                cooldownElapsed += Time.deltaTime;
+                if (cooldownElapsed >= cooldown)
+                {
+                    cooldownElapsed = 0;
+                    Attack(speed);
+                }
 
+            }
         }
-
     }
 
     public GameObject Waterball;
@@ -39,12 +43,13 @@ public class GunEnemyScript : MonoBehaviour {
 
     private void FixedUpdate()
     {
-
     }
 
     void Attack(float s)
     {
         GameObject newRAttack = Instantiate(Waterball, transform.position, transform.rotation);
+        newRAttack.AddComponent<BuffHandler>();
         newRAttack.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0f, s));
+        gameObject.GetComponent<BuffHandler>().TransferBuffs(newRAttack);
     }
 }

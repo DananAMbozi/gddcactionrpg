@@ -23,6 +23,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (IsBreakableEnemy(other))
         {
+            if ((other.gameObject.GetComponent<BuffHandler>() != null) && (gameObject.GetComponent<BuffHandler>() != null))
+                gameObject.GetComponent<BuffHandler>().TransferBuffs(other.gameObject);
+
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             if (!isDying)
             {

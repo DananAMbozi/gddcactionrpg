@@ -17,7 +17,7 @@ public class BuffInvincible : StatusEffect {
 
     public override void Init()
     {
-        dispellable = true; //Can be dispelled
+        buffName = "Mist";
         targetCharacter = gameObject.GetComponent<SpriteRenderer>();
 
         //Temporary. Maybe have each character contain an internal tag that can't be changed
@@ -46,12 +46,17 @@ public class BuffInvincible : StatusEffect {
     {
         gameObject.transform.tag = originalTag;
         targetCharacter.color = new Color(targetCharacter.color.r, targetCharacter.color.g, targetCharacter.color.b, targetCharacter.color.a + 0.7f);  //Return the character back to normal form
+
+        gameObject.GetComponent<BuffHandler>().RemoveBuff(this);
         Destroy(this);
     }
 
-    public override void Stack()
+    public override void Stack(StatusEffect sameEffect)
     {
-        //Currently unused
         buffTimer = maxBuffTimer;
+    }
+
+    public override void TransferBuff(GameObject target)
+    {
     }
 }

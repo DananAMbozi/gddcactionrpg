@@ -14,7 +14,7 @@ public class SnowBatDeath : MonoBehaviour {
         if (player != null)
         {
             snowBlindness = player.AddComponent<BuffSnowBlindness>();
-            snowBlindness.Init();
+            player.GetComponent<BuffHandler>().AddBuff(snowBlindness);
         }
     }
 }
