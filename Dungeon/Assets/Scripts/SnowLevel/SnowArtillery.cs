@@ -21,6 +21,7 @@ public class SnowArtillery : MonoBehaviour {
 
         if (timer <= 0)
         {
+            // Create explosion particle effect for a set duration before destroying self
             if (!explode)
             {
                 gameObject.GetComponent<ParticleSystem>().Play();
@@ -29,6 +30,7 @@ public class SnowArtillery : MonoBehaviour {
                 explode = true;
                 player = GameObject.FindGameObjectWithTag("Player");
 
+                // If distance to player is < 3, apply freeze and slow debuff
                 if ((player != null) && (Vector3.Distance(player.transform.position, transform.position) < 3))
                 {
                     player.GetComponent<PlayerHealth>().TakeDamage(power);

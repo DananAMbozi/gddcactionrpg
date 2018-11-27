@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Enemy class that can heal all other enemies. When health becomes low enough, it will switch to damaging the player
 public class HealTower : MonoBehaviour {
 
-    float maxCoolDownTimer = 10f;
+    float maxCoolDownTimer = 10f;   // Cooldown for healing/damaging
     float coolDownTimer;
     int power = 10;
-    bool enrage = false;
-    float enrageRange = 10f;
+    bool enrage = false;    // Healing or damaging mode. Once switched to damage mode, it will remain even if healed back
+    float enrageRange = 10f;    // Range of attack when enraged
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class HealTower : MonoBehaviour {
 	void Update () {
         coolDownTimer -= 1 * Time.deltaTime;
 
+        // If health drops below 30, it will switch from healing enemies to hurting the player every 3 seconds
         if ((!enrage) && (gameObject.GetComponent<ObjectHealth>().health < 30))
         {
             enrage = true;
@@ -40,7 +42,8 @@ public class HealTower : MonoBehaviour {
 
             for(int i = 0; i < listOfEnemies.Length; i++)
             {
-                listOfEnemies[i].GetComponent<ObjectHealth>().TakeDamage(-power);
+                if(listOfEnemies[i].GetComponent<ObjectHealth>() != null)
+                    listOfEnemies[i].GetComponent<ObjectHealth>().TakeDamage(-power);
             }
         }
         else

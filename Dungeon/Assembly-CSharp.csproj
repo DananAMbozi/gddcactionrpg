@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\EnemyScripts\GunEnemyScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\HealTower.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\ObjectHealth.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\Phantom.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\SnowBatDeath.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\SnowMine.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\TurnTowardsPlayer.cs" />

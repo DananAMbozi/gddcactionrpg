@@ -15,13 +15,16 @@ public class ObjectHealth : MonoBehaviour
 
     private void Awake()
     {
+        // Used to change the colour of the object on taking damage/healing
         damageIndicator = gameObject.GetComponent<SpriteRenderer>();
+        // Attach BuffHandler script to the object if they contain the following tags. This script lets them handle buffs/debuffs
         if((gameObject.tag ==  "Enemy") || (gameObject.tag == "Boss") || (gameObject.tag == "GunEnemy"))
             gameObject.AddComponent<BuffHandler>();
     }
 
     private void Update()
     {
+        // If the object has taken damage or healed, they will change colour for a brief period of time
         if (damaged)
         {
             damageCooldown -= 1 * Time.deltaTime;
@@ -52,6 +55,7 @@ public class ObjectHealth : MonoBehaviour
         }
         health -= damage;
 
+        // If the object has taken damage or healed, they will flash red or green for a set amount of time
         if (damage != 0)
         {
             damageColour = new Color(Mathf.Sign(damage), -Mathf.Sign(damage), -1f, 0f);
@@ -64,10 +68,10 @@ public class ObjectHealth : MonoBehaviour
             isDead = true;
             GameObject.Find("Player").GetComponent<PlayerHealth>().ChangePoints(reward);
             Destroy(gameObject);
-      //      if (isEnemy)
-     //       {
-      //          transform.parent.GetChild(2).GetComponent<DoorLocks>().EnemyDied();
-        //    }
+            if (isEnemy)
+            {
+                transform.parent.GetChild(2).GetComponent<DoorLocks>().EnemyDied();
+            }
         }
     }
 }

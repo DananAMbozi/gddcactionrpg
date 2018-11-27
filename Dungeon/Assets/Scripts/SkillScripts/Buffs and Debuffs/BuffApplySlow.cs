@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Passive effect that can apply slow to bullets. Testing purposes. Currently not in game
 public class BuffApplySlow : StatusEffect {
 
-    int slowChance = 100;
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    int slowChance = 20;
 
     public override void Activate()
     {
@@ -39,11 +34,13 @@ public class BuffApplySlow : StatusEffect {
 
     public override void Stack(StatusEffect sameEffect)
     {
-        slowChance += 5;
+        // Untested. Arbitrary value
+        slowChance += 0;
     }
 
     public override void TransferBuff(GameObject target)
     {
+        // Whoever the projectile hits will have a buffslow applied to it
         if (target.GetComponent<BuffHandler>() != null)
         {
             if ((target.tag == "Player") || (target.tag == "Enemy") || (target.tag == "GunEnemy") || (target.tag == "Boss"))
@@ -55,7 +52,7 @@ public class BuffApplySlow : StatusEffect {
                     target.GetComponent<BuffHandler>().AddBuff(slow);
                 }
             }
-            else
+            else // When instantiating an object (likely projectile), give this buff to it. Untested on summoning enemies
                 target.GetComponent<BuffHandler>().AddBuff(target.AddComponent<BuffApplySlow>());
         }
     }

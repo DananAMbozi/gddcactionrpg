@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Enemy that is summoned by the snow boss. W.I.P.
 public class Deflector : MonoBehaviour {
 
     Rigidbody2D reflect;    // Used to obtain the rigidbody of the projectile so that its force can be manipulated
