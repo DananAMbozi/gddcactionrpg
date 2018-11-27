@@ -21,6 +21,7 @@ TagManager:
   - Bot
   - Level
   - SnowEmitter
+  - Boss
   layers:
   - Default
   - TransparentFX

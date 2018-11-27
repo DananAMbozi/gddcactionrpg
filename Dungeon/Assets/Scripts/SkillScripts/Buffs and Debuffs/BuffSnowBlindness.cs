@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Debuff that makes the player's screen more difficult to see by adding more snow on screen for a period of time.
 public class BuffSnowBlindness : StatusEffect {
 
-    GameObject snowEmitter;
+    GameObject snowEmitter; // There is a snow emitter on the level that this enemy will access
     int snowAmount;
 
     private void Update()
