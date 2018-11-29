@@ -7,6 +7,11 @@ public class BuffInvincible : StatusEffect {
     private SpriteRenderer targetCharacter;
     private string originalTag;
 
+    private void Awake()
+    {
+        buffName = "Mist";
+    }
+
     void Update()
     {
         buffTimer -= 1 * Time.deltaTime;
@@ -17,7 +22,6 @@ public class BuffInvincible : StatusEffect {
 
     public override void Init()
     {
-        buffName = "Mist";
         targetCharacter = gameObject.GetComponent<SpriteRenderer>();
 
         //Temporary. Maybe have each character contain an internal tag that can't be changed

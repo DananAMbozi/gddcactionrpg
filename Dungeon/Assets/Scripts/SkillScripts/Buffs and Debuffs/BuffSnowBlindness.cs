@@ -16,7 +16,10 @@ public class BuffSnowBlindness : StatusEffect {
     }
     public override void Activate()
     {
-        snowEmitter.GetComponent<SnowEmitter>().AddSnow(snowAmount);
+        if (snowEmitter != null)
+            snowEmitter.GetComponent<SnowEmitter>().AddSnow(snowAmount);
+        else
+            buffDestroy();
     }
 
     public override string buffDescription()

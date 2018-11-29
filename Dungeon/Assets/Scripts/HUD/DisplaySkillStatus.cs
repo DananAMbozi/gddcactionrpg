@@ -9,6 +9,8 @@ public class DisplaySkillStatus : MonoBehaviour {
     /*
      * This class is used to create the skill HUD that is displayed on the player's screen. It is a component that must be
      * attached to the player GameObject.
+     * 
+     * Attached by PlayerSkillSet.cs
      * */
 
     public int numSkills = 3;//4; The number of (active, not passive?) skills to be displayed
@@ -54,6 +56,7 @@ public class DisplaySkillStatus : MonoBehaviour {
         textPosition = new RectTransform[numSkills];
         skillList = new Skills[numSkills];
         font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
+
 
         GameObject canv;    // GameObject that the image will attach to. Parent = canvas
         GameObject textCanv;    // GameObject that the keyboard text will attach to. Parent = skill icons
@@ -160,5 +163,10 @@ public class DisplaySkillStatus : MonoBehaviour {
 
         }
         return coolDown;
+    }
+
+    public void AddUIElement(GameObject UIElement)
+    {
+        UIElement.transform.SetParent(canvas.transform, false);
     }
 }

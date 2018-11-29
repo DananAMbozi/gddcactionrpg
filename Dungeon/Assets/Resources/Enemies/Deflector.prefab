@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212111346729256106}
   - component: {fileID: 114122579785575286}
   - component: {fileID: 58282939090831554}
+  - component: {fileID: 95325287662919124}
   m_Layer: 0
   m_Name: Deflector
   m_TagString: Untagged
@@ -56,7 +57,25 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
+--- !u!95 &95325287662919124
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1915721828173440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a16623312a734f7479703dd2529e9e09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114122579785575286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a140fb6e6ea52544961133e7c552b9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e8f8eca646ca0a45a0035d2edb6dc20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

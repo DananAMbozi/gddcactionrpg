@@ -12,6 +12,8 @@ public class BuffSpeedUp : StatusEffect
 
     private void Awake()
     {
+        buffName = "Haste";
+        dispellable = true;
         changeColour = new Color(0f, -0.2f, -0.2f, 0f);
     }
 
@@ -30,8 +32,6 @@ public class BuffSpeedUp : StatusEffect
 
     public override void Init()
     {
-        buffName = "Haste";
-        dispellable = true;
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
 

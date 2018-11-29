@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 212225749608372736}
   - component: {fileID: 95653833397270120}
   - component: {fileID: 114163050118801360}
-  - component: {fileID: 114992639086472740}
   - component: {fileID: 50129103922790048}
   - component: {fileID: 58600969273326482}
   - component: {fileID: 114578800305329576}
   - component: {fileID: 114228787148761334}
+  - component: {fileID: 114274270903633178}
   m_Layer: 0
   m_Name: SnowBat
   m_TagString: Enemy
@@ -126,6 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1056e5ddd946c44988ec04311d6c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114274270903633178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510174895872920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65915a871d00ccd47b6cc9ff4222b35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxSpeed: 2
+  roomSize: 25
+  autochase: 1
 --- !u!114 &114578800305329576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,20 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc53719097f8d4e45b239e753a231b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114992639086472740
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1510174895872920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc5b1c892c9b9940a4989c9a0b15f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boxSpeed: 2
-  roomSize: 25
-  autochase: 1
 --- !u!212 &212225749608372736
 SpriteRenderer:
   m_ObjectHideFlags: 1

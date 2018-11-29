@@ -19,19 +19,23 @@ public class spawnMinions : MonoBehaviour {
 	private float spawnDelay = 10;
 	private float nextSpawnTime;		//when can boss spawn a new minion
 
+    Animator anim;
 
 	// Use this for initialization
 	void Start () {
-        nextSpawnTime = 0.0f;
+        anim = gameObject.GetComponent<Animator>();
+        nextSpawnTime = 5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		int max = 4;
-
+ 
         if(Time.time > nextSpawnTime){
             SpawnObj(shootEn, 8, true);
             nextSpawnTime = Time.time + nextSpawnTime + 10/spawnRate;
+
+            anim.SetInteger("state", 5);
         }
 		/*
         int numberShootEn = (int)(max * Random.value);
@@ -58,11 +62,14 @@ public class spawnMinions : MonoBehaviour {
             }
             float cosAngle = (float)System.Math.Cos(spawnAngle * System.Math.PI / 180);
             float sinAngle = (float)System.Math.Sin(spawnAngle * System.Math.PI / 180);
-            Debug.Log(gameObject.transform.position.x+ spawnRadius * cosAngle);
-            Debug.Log(gameObject.transform.position.y+ spawnRadius * sinAngle);
             Vector3 spawnPos = new Vector3(gameObject.transform.position.x + spawnRadius * cosAngle, gameObject.transform.position.y + spawnRadius * sinAngle, 0);
             Transform newObj = Instantiate(t, spawnPos, q);
             spawnAngle += spawnIncrement;
         }
+    }
+
+    void ChangeIdleState()
+    {
+        anim.SetInteger("state", Random.Range(1, 5));
     }
 }

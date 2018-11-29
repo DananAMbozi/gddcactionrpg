@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public int startingHealth;
     public static int health = 50;
     public static int points = 0;
-    public float immunityLength;
+    public float immunityLength = 1.5f;
     private float immunityCD = 0;
     private GameObject player;
 
@@ -31,10 +31,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Update()
     {
-        if (immunityCD != 0)
-        {
-            immunityCD -= Time.deltaTime;
-        }
+        immunityCD -= Time.deltaTime;
 
         if (damaged)
         {
@@ -50,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (immunityCD < immunityLength)
+        if (immunityCD < 0)
         {
             immunityCD = immunityLength;
             health -= damage;

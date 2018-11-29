@@ -61,6 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Boss Scripts\SnowBoss\CannonDog.cs" />
+    <Compile Include="Assets\Scripts\Boss Scripts\SnowBoss\Forgotten.cs" />
     <Compile Include="Assets\Scripts\Boss Scripts\spawnMinions.cs" />
     <Compile Include="Assets\Scripts\BoxmenuScript.cs" />
     <Compile Include="Assets\Scripts\BuffHandler.cs" />
@@ -73,12 +75,15 @@
     <Compile Include="Assets\Scripts\EnemyScripts\ChasePlayer.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Deflector.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemySword.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\EnemySword2.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\GunEnemyScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\HealTower.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\ObjectHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\Phantom.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\SnowBatChasePlayer.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\SnowBatDeath.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\SnowGrenade.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\SnowMine.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\TurnTowardsPlayer.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\WaterballScript.cs" />
@@ -112,6 +117,7 @@
     <Compile Include="Assets\Scripts\SetCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SkillAssigner.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffApplySlow.cs" />
+    <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffForgotten.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffFreeze.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffInvincible.cs" />
     <Compile Include="Assets\Scripts\SkillScripts\Buffs and Debuffs\BuffSlow.cs" />

@@ -9,7 +9,8 @@ public class Phantom : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(2f, 3f), Random.Range(2f, 3f));
+        // -1 + 2 * Random.Range(0, 2) is just a way to get either -1 or 1 randomly (no 0)
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1 + 2 * Random.Range(0, 2) * Random.Range(2f, 3f), -1 + 2 * Random.Range(0, 2) * Random.Range(2f, 3f));
     }
 	
 	// Update is called once per frame

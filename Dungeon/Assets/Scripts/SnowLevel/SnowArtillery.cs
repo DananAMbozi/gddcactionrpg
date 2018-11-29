@@ -8,7 +8,7 @@ public class SnowArtillery : MonoBehaviour {
     float timer = 1f;
     bool explode = false;
     GameObject player;
-    int power = 50;
+    int power = 20;
 
 	// Use this for initialization
 	void Start () {

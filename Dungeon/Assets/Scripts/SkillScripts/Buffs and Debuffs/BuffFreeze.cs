@@ -7,6 +7,15 @@ public class BuffFreeze : StatusEffect {
 
     SpriteRenderer freezeEffect;
 
+    private void Awake()
+    {
+        buff = false;
+        stackable = false;
+        buffName = "Freeze";
+        maxBuffTimer = 3f;  // 3 seconds. Always want it at 3 seconds?
+        buffTimer = maxBuffTimer;
+    }
+
     private void Update()
     {
         buffTimer -= Time.deltaTime;
@@ -35,16 +44,12 @@ public class BuffFreeze : StatusEffect {
         freezeEffect.color = freezeEffect.color - new Color(-0.5f, -0.5f, 0f);
         gameObject.GetComponent<PlayerMovement>().enabled = true;
         gameObject.GetComponent<PlayerSkillSet>().enabled = true;
+        gameObject.GetComponent<BuffHandler>().RemoveBuff(this);
         Destroy(this);
     }
 
     public override void Init()
     {
-        buff = false;
-        stackable = false;
-        buffName = "Freeze";
-        maxBuffTimer = 3f;  // 3 seconds. Always want it at 3 seconds?
-        buffTimer = maxBuffTimer;
         Activate();
     }
 

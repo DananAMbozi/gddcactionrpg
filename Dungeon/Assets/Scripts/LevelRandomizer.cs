@@ -12,6 +12,8 @@ public class LevelRandomizer : MonoBehaviour
     public Transform shootEn;
     public Transform followEn;
     public Transform explodeEn;
+    public Transform brushEn;
+
     public float minX = -8.5f;
     public float maxX = 8.5f;
     public float minY = -3;
@@ -46,6 +48,10 @@ public class LevelRandomizer : MonoBehaviour
         int numExplodeEn = (int)(max * Random.value);
         SpawnObj(explodeEn, numExplodeEn, false);
         numEnemies += numExplodeEn;
+
+        int numBrushEn = (int)(max * Random.value);
+        SpawnObj(brushEn, numBrushEn, false);
+        numEnemies += numBrushEn;
 
         for (int i = 0; i < transform.childCount; i++)
         {

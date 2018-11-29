@@ -7,7 +7,7 @@ public class Deflector : MonoBehaviour {
 
     Rigidbody2D reflect;    // Used to obtain the rigidbody of the projectile so that its force can be manipulated
     Transform reflectAngle; // Used to obtain the transform of the projectile so that its rotation can be manipulated
-    float life = 10f;
+    float life = 5f;
 	
 	// Update is called once per frame
 	void Update () {

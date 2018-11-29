@@ -12,6 +12,7 @@ public class ObjectHealth : MonoBehaviour
     public int reward = 1;
     public bool isEnemy;
     public bool isDead = false;
+    private float evasionChance = 0f;
 
     private void Awake()
     {
@@ -46,6 +47,14 @@ public class ObjectHealth : MonoBehaviour
         }
     }
 
+    public void SetEvasion(float newEvasion)
+    {
+        evasionChance = newEvasion;
+    }
+    public float GetEvasion()
+    {
+        return evasionChance;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -53,25 +62,31 @@ public class ObjectHealth : MonoBehaviour
         {
             return;
         }
-        health -= damage;
 
-        // If the object has taken damage or healed, they will flash red or green for a set amount of time
-        if (damage != 0)
+        float hitChance = Random.Range(0, 1f);
+
+        if (hitChance >= evasionChance)
         {
-            damageColour = new Color(Mathf.Sign(damage), -Mathf.Sign(damage), -1f, 0f);
-            damageIndicator.color += damageColour;
-            damaged = true;
-            damageCooldown = 0.1f;
-        }
-        if (health <= 0)
-        {
-            isDead = true;
-            GameObject.Find("Player").GetComponent<PlayerHealth>().ChangePoints(reward);
-            Destroy(gameObject);
+            health -= damage;
+
+            // If the object has taken damage or healed, they will flash red or green for a set amount of time
+            if ((damage != 0) && (!damaged))
+            {
+                damageColour = new Color(Mathf.Sign(damage), -Mathf.Sign(damage), -1f, 0f);
+                damageIndicator.color += damageColour;
+                damaged = true;
+                damageCooldown = 0.1f;
+            }
+            if (health <= 0)
+            {
+                isDead = true;
+                GameObject.Find("Player").GetComponent<PlayerHealth>().ChangePoints(reward);
+                Destroy(gameObject);
             if (isEnemy)
             {
                 transform.parent.GetChild(2).GetComponent<DoorLocks>().EnemyDied();
             }
-        }
+            }
+        };
     }
 }

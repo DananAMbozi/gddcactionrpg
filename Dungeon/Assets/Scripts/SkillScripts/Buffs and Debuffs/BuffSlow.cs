@@ -10,6 +10,13 @@ public class BuffSlow : StatusEffect {
     bool instantiated = false; // Used for TransferEffects(). Instantiated = true when attaching this script to an object instantiated by this gameObject
     float instanceTimer = 0.03f;    // Arbitrary delay when transferring effects due to how velocity is handled
 
+    private void Awake()
+    {
+        buff = false;
+        stackable = false;
+        buffName = "Slow";
+    }
+
     private void Update()
     {
         buffTimer -= Time.deltaTime;
@@ -79,19 +86,23 @@ public class BuffSlow : StatusEffect {
     public override void Stack(StatusEffect sameEffect)
     {
         // On override, just renew the slow effect for whatever the newest applied buff duration is
-        maxBuffTimer = sameEffect.GetMaxBuffTimer();
+        if(sameEffect.GetMaxBuffTimer() > maxBuffTimer)
+            maxBuffTimer = sameEffect.GetMaxBuffTimer();
         buffTimer = maxBuffTimer;
     }
 
     public override void TransferBuff(GameObject target)
     {
-        // Attach slow debuff to whatever this object instantiates if the instantiated object has a BuffHandler component
-        if (target.GetComponent<BuffHandler>() != null)
+        if ((gameObject.tag != "EnemyAttack") && (gameObject.tag != "Attack"))        // Messy quick fix
         {
-            BuffSlow transferSlow = target.AddComponent<BuffSlow>();
-            transferSlow.Instantiated(true);
-            transferSlow.SetBuffTimer(GetMaxBuffTimer());
-            target.GetComponent<BuffHandler>().AddBuff(transferSlow);
+            // Attach slow debuff to whatever this object instantiates if the instantiated object has a BuffHandler component
+            if (target.GetComponent<BuffHandler>() != null)
+            {
+                BuffSlow transferSlow = target.AddComponent<BuffSlow>();
+                transferSlow.Instantiated(true);
+                transferSlow.SetBuffTimer(GetMaxBuffTimer());
+                target.GetComponent<BuffHandler>().AddBuff(transferSlow);
+            }
         }
     }
 }

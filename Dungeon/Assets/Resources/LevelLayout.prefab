@@ -520,6 +520,7 @@ MonoBehaviour:
   shootEn: {fileID: 4195686451256164, guid: 9e83cc2736f9d6d4994ed49db4350364, type: 2}
   followEn: {fileID: 4422771078236654, guid: 258e410a24b177d4f84ebdef5e11f4aa, type: 2}
   explodeEn: {fileID: 4422771078236654, guid: 6f4cd6ddde348c34aa3e71f2021cfea9, type: 2}
+  brushEn: {fileID: 4267309527276912, guid: 945c03e7596e0134db2b43ba01ae8b42, type: 2}
   minX: -8.5
   maxX: 8.5
   minY: -3

@@ -16,7 +16,7 @@ public class PlayerSkillSet : MonoBehaviour
 
     private DisplaySkillStatus skillUI;
 
-    void Start()
+    void Awake()
     {
         skillUI = gameObject.AddComponent<DisplaySkillStatus>();//new DisplaySkillStatus();
         skillUI.Init();

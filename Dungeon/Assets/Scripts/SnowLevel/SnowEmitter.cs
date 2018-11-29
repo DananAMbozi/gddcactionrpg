@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SnowEmitter : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class SnowEmitter : MonoBehaviour {
     GameObject player;
     float artilleryTimer = 10f;
     GameObject artillery;
+    bool enableArtillery = true;
 
     int numParticles = 5;
     int maxParticles = 100;
@@ -47,14 +49,19 @@ public class SnowEmitter : MonoBehaviour {
 
     private void Update()
     {
-        artilleryTimer -= Time.deltaTime;
-
-        if (artilleryTimer < 0)
+      //  if (SceneManager.GetActiveScene().name == "Menu")
+       //     Destroy(gameObject);
+        if (enableArtillery)
         {
-            artilleryTimer = 10f;
-            if (player != null)
+            artilleryTimer -= Time.deltaTime;
+
+            if (artilleryTimer < 0)
             {
-                GameObject artilleryClone = Instantiate(artillery, player.transform.position, Quaternion.identity);
+                artilleryTimer = 10f;
+                if (player != null)
+                {
+                    GameObject artilleryClone = Instantiate(artillery, player.transform.position, Quaternion.identity);
+                }
             }
         }
     }
@@ -71,5 +78,24 @@ public class SnowEmitter : MonoBehaviour {
         if (alpha < 0)
             alpha = 0;
         blankScreenClone.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, alpha);
+    }
+
+    // Used by the boss. Indicator of how much snow is on screen
+    public float GetAlpha()
+    {
+        return alpha;
+    }
+
+    public void EnableArtillery(bool enable)
+    {
+        enableArtillery = enable;
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(snowEmitterClone);
+        Destroy(blankScreenClone);
+     //   Destroy(snowEmitter);
+      //  Destroy(blankScreen);
     }
 }
